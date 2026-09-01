@@ -1,0 +1,1319 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>杨骏青 Junqing Yang | Robotics & Embodied AI</title>
+    <meta
+      name="description"
+      content="杨骏青（Junqing Yang）个人主页：具身智能算法工程师，研究方向涵盖机器人学习、3D 视觉、多模态感知、模仿学习与真实机器人部署。"
+    />
+    <meta name="author" content="Junqing Yang" />
+    <meta property="og:title" content="杨骏青 Junqing Yang | Robotics & Embodied AI" />
+    <meta
+      property="og:description"
+      content="具身智能算法工程师 · 机器人学习 / 3D 视觉 / 真机部署"
+    />
+    <meta property="og:type" content="website" />
+    <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Noto+Sans+SC:wght@400;500;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css?v=20260901-m" />
+    <script>
+      // Set before first paint so reveal animations never hide content when JS is off.
+      document.documentElement.classList.add('js');
+    </script>
+  </head>
+  <body>
+    <a class="skip-link" href="#overview">跳到主要内容</a>
+
+    <div class="page-shell">
+      <header class="site-header">
+        <a class="brand" href="#overview">
+          <span class="brand-text">
+            <strong>杨骏青 Junqing Yang</strong>
+            <span>robotics &amp; embodied ai</span>
+          </span>
+        </a>
+        <nav class="site-nav" aria-label="页面导航">
+          <a href="#overview" data-nav-link>Overview</a>
+          <a href="#experience" data-nav-link>Experience</a>
+          <a href="#projects" data-nav-link>Projects</a>
+          <a href="#publications" data-nav-link>Publications</a>
+          <a href="#stack" data-nav-link>Stack</a>
+        </nav>
+      </header>
+
+      <main class="profile-home">
+        <aside class="profile-sidebar reveal">
+          <section class="profile-card">
+            <img
+              class="profile-avatar"
+              src="assets/images/profile.png"
+              alt="杨骏青的照片"
+              width="512"
+              height="512"
+              loading="eager"
+              decoding="async"
+            />
+
+            <h2>杨骏青</h2>
+            <p class="profile-role">AI Researcher · Medical &amp; Robotics Engineer</p>
+            <p class="profile-motto">“NEVER KNOWS BEST”</p>
+
+            <p class="profile-summary">
+              伦敦大学学院（UCL）机器人与人工智能硕士，现任机器人抓取算法工程师。
+              具备机器人学习、3D 视觉、多模态感知、模仿学习、策略学习与真实机器人部署的端到端研发经验，
+              关注数据闭环、模型泛化与真机部署稳定性。
+            </p>
+
+            <dl class="profile-meta">
+              <div>
+                <dt>Robot Learning</dt>
+                <dd>模仿学习、策略学习、ACT / DiffusionPolicy / FlowMatching / VLA / WAM</dd>
+              </div>
+              <div>
+                <dt>Perception</dt>
+                <dd>3D 视觉、点云与 RGB-D 融合、位姿估计、多模态感知</dd>
+              </div>
+              <div>
+                <dt>Manipulation</dt>
+                <dd>精细操作、亚毫米级装配、灵巧手操作、真机部署与调试</dd>
+              </div>
+              <div>
+                <dt>Data Pipeline</dt>
+                <dd>多源数据采集、自动化质检、训练数据构建与版本管理</dd>
+              </div>
+              <div>
+                <dt>Collaboration</dt>
+                <dd>欢迎研究合作与开源项目交流</dd>
+              </div>
+            </dl>
+
+            <dl class="profile-contact">
+              <div>
+                <dt class="contact-key">Email</dt>
+                <dd><a class="accent" href="mailto:yjunqing12@163.com">yjunqing12@163.com</a></dd>
+              </div>
+              <div>
+                <dt class="contact-key">GitHub</dt>
+                <dd><a class="accent" href="https://github.com/JQ-Sakura" rel="me">JQ-Sakura</a></dd>
+              </div>
+              <div>
+                <dt class="contact-key">LinkedIn</dt>
+                <dd>
+                  <a class="accent" href="https://www.linkedin.com/in/junqing-yang-381b73245">
+                    junqing-yang
+                  </a>
+                </dd>
+              </div>
+              <div>
+                <dt class="contact-key">Based in</dt>
+                <dd>上海，中国</dd>
+              </div>
+            </dl>
+
+            <div class="profile-links">
+              <a href="#project-rl-seg">rl-3d-segmentation</a>
+              <a href="#project-pouring">transparent-pouring</a>
+              <a href="#project-wellplate">sub-mm-insertion</a>
+              <a href="#project-isaaclab">isaaclab-sim</a>
+              <a href="#project-slam">orb-slam2-eval</a>
+              <a href="#project-ros-grasp">ros-grasping</a>
+              <a href="#project-binpacking">drl-bin-packing</a>
+            </div>
+          </section>
+        </aside>
+
+        <div class="content-column">
+          <!-- ============ OVERVIEW ============ -->
+          <section class="section reveal" data-section id="overview">
+            <div class="section-heading">
+              <p class="eyebrow">Overview</p>
+              <h1>机器人学习与真机部署</h1>
+              <p>
+                从数据采集到策略上机的完整链路：多源遥操作采集、自动化质检、策略训练评测，
+                再到真实机器人上的高精度、低延迟执行。
+              </p>
+            </div>
+
+            <div class="highlight-grid">
+              <article class="highlight-card">
+                <p class="highlight-label">透明容器倒水（真机）</p>
+                <p class="highlight-value">98<span>%+</span></p>
+                <p>纯感知方案，双臂循环跑测基本无失败</p>
+              </article>
+              <article class="highlight-card">
+                <p class="highlight-label">多材质容器抓取</p>
+                <p class="highlight-value">99<span>%+</span></p>
+                <p>透明、反光材质与光照变化下的泛化</p>
+              </article>
+              <article class="highlight-card">
+                <p class="highlight-label">亚毫米级孔板抓放</p>
+                <p class="highlight-value">95<span>%+</span></p>
+                <p>基于 FlowMatching 的长程精细装配</p>
+              </article>
+              <article class="highlight-card">
+                <p class="highlight-label">已发表论文</p>
+                <p class="highlight-value">6<span> 篇</span></p>
+                <p>其中 4 篇第一作者</p>
+              </article>
+            </div>
+
+            <div class="overview-grid">
+              <section class="overview-panel">
+                <div class="panel-head">
+                  <h2>Project Map</h2>
+                  <span>selected work</span>
+                </div>
+                <div class="repo-grid">
+                  <article class="repo-card repo-card-featured">
+                    <div class="repo-topline">
+                      <a class="repo-name" href="#project-pouring">transparent-pouring</a>
+                      <span class="repo-flag">Manipulation</span>
+                    </div>
+                    <p class="repo-description">
+                      基于 RGB-D 与点云融合的纯感知方案，完成透明容器分割、位姿估计、瓶口与抓取点预测，
+                      支撑双臂循环倒水任务。
+                    </p>
+                    <ul class="repo-meta-list">
+                      <li>FoundationStereo</li>
+                      <li>FoundationPose</li>
+                      <li>PointTransformerV3</li>
+                    </ul>
+                  </article>
+
+                  <article class="repo-card">
+                    <div class="repo-topline">
+                      <a class="repo-name" href="#project-wellplate">sub-mm-insertion</a>
+                      <span class="repo-flag">Policy</span>
+                    </div>
+                    <p class="repo-description">
+                      孔板抓放至孔槽的亚毫米级精度任务，系统对比多类策略模型并优化插入阶段控制。
+                    </p>
+                    <ul class="repo-meta-list">
+                      <li>FlowMatching</li>
+                      <li>DiffusionPolicy</li>
+                      <li>ACT / VLA</li>
+                    </ul>
+                  </article>
+
+                  <article class="repo-card">
+                    <div class="repo-topline">
+                      <a class="repo-name" href="#project-rl-seg">rl-3d-segmentation</a>
+                      <span class="repo-flag">Research</span>
+                    </div>
+                    <p class="repo-description">
+                      可提示区域探索用于前列腺癌分割，硕士毕业设计，已发表于 IJCARS。
+                    </p>
+                    <ul class="repo-meta-list">
+                      <li>PPO</li>
+                      <li>Actor-Critic</li>
+                      <li>DDP</li>
+                    </ul>
+                  </article>
+
+                  <article class="repo-card">
+                    <div class="repo-topline">
+                      <a class="repo-name" href="#project-datapipeline">robot-data-pipeline</a>
+                      <span class="repo-flag">Infra</span>
+                    </div>
+                    <p class="repo-description">
+                      多源机器人数据采集与质检管线，覆盖 MOCAP、3D 鼠标、VR 遥操作、拖动示教与 UMI。
+                    </p>
+                    <ul class="repo-meta-list">
+                      <li>LeRobot / DexData</li>
+                      <li>自动化 QC</li>
+                      <li>rerun</li>
+                    </ul>
+                  </article>
+
+                  <article class="repo-card">
+                    <div class="repo-topline">
+                      <a class="repo-name" href="#project-isaaclab">isaaclab-sim</a>
+                      <span class="repo-flag">Sim</span>
+                    </div>
+                    <p class="repo-description">
+                      基于 NVIDIA IsaacLab 的多机器人仿真环境，训练 PPO 策略并评估 sim-to-real 可迁移性。
+                    </p>
+                    <ul class="repo-meta-list">
+                      <li>IsaacLab</li>
+                      <li>VecEnv</li>
+                      <li>USD</li>
+                    </ul>
+                  </article>
+
+                  <article class="repo-card">
+                    <div class="repo-topline">
+                      <a class="repo-name" href="#project-slam">orb-slam2-eval</a>
+                      <span class="repo-flag">SLAM</span>
+                    </div>
+                    <p class="repo-description">
+                      在 TUM、KITTI 与自录视频上做消融式评估，室内轨迹精度 &lt;0.11m RMSE。
+                    </p>
+                    <ul class="repo-meta-list">
+                      <li>COLMAP</li>
+                      <li>EVO / APE</li>
+                      <li>C++</li>
+                    </ul>
+                  </article>
+                </div>
+              </section>
+            </div>
+
+            <div class="section-heading" style="margin-top: 2.4rem">
+              <p class="eyebrow">Education</p>
+              <h2>教育经历</h2>
+            </div>
+
+            <div class="edu-grid">
+              <article class="edu-card">
+                <p class="edu-school">伦敦大学学院 University College London</p>
+                <p class="edu-degree">硕士 · 医学机器人与人工智能</p>
+                <p class="edu-line">
+                  <span>2024.09 – 2025.09</span>
+                  <span class="place">伦敦，英国</span>
+                </p>
+                <p class="edu-honor">一等荣誉学位 First-class Honours</p>
+              </article>
+
+              <article class="edu-card">
+                <p class="edu-school">西交利物浦大学 Xi'an Jiaotong-Liverpool University</p>
+                <p class="edu-degree">学士 · 智能机器人工程</p>
+                <p class="edu-line">
+                  <span>2020.09 – 2024.09</span>
+                  <span class="place">苏州，中国</span>
+                </p>
+                <p class="edu-honor">一等荣誉学位 · GPA 前 5%</p>
+              </article>
+            </div>
+          </section>
+
+          <!-- ============ EXPERIENCE ============ -->
+          <section class="section reveal" data-section id="experience">
+            <div class="section-heading">
+              <p class="eyebrow">Experience</p>
+              <h2>工作经历</h2>
+              <p>从嵌入式与机器视觉起步，逐步转向机器人学习与真实机器人系统的端到端研发。</p>
+            </div>
+
+            <div class="timeline">
+              <article class="timeline-item is-current">
+                <span class="dot" aria-hidden="true"></span>
+                <div class="timeline-top">
+                  <div>
+                    <p class="timeline-role">机器人抓取算法工程师 <span class="status">现任</span></p>
+                    <p class="timeline-org">
+                      上海<span class="redacted" role="img" aria-label="公司名称暂不公开"
+                        title="暂不公开"></span>有限公司 · 上海，中国
+                    </p>
+                  </div>
+                  <p class="timeline-date">2026.07 – 至今</p>
+                </div>
+                <div class="timeline-body">
+                  <ul>
+                    <li>负责机器人感知与任务操作相关算法研发。</li>
+                  </ul>
+                  <div class="timeline-tags tag-row">
+                    <span>Grasping</span>
+                    <span>Perception</span>
+                    <span>Manipulation</span>
+                  </div>
+                </div>
+              </article>
+
+              <article class="timeline-item">
+                <span class="dot" aria-hidden="true"></span>
+                <div class="timeline-top">
+                  <div>
+                    <p class="timeline-role">具身智能算法工程师</p>
+                    <p class="timeline-org">源络科技（上海）有限公司 · 上海，中国</p>
+                  </div>
+                  <p class="timeline-date">2025.10 – 2026.07</p>
+                </div>
+                <div class="timeline-body">
+                  <ul>
+                    <li>
+                      面向透明容器抓取与倒水、孔板抓放至孔槽等精细操作任务，负责机器人学习数据闭环与真机部署研发，
+                      覆盖多源数据采集、自动化质检、训练数据构建、模型训练评估、策略部署与真机验证的全链路。
+                    </li>
+                    <li>
+                      主导搭建多任务机器人数据采集管线，开发并适配 MOCAP 动捕房、3D 鼠标遥操作、VR 遥操作、
+                      协作臂拖动示教与 UMI 等采集方案，支持自研人形机器人、Franka、Rokae 平台的数据采集与任务复现。
+                    </li>
+                    <li>
+                      设计数据质检 SOP 与自动化 QC 工具，覆盖 RGB-D、点云、相机标定、时间戳同步、动作轨迹完整性
+                      与 rerun 异常样本筛查，并将原始数据自动转换为 LeRobot、DexData 等训练格式，
+                      支撑 ACT、DiffusionPolicy、FlowMatching、VLA 与 WAM 等策略模型训练，避免训练时才发现数据问题。
+                    </li>
+                    <li>
+                      透明容器倒水任务：构建 RGB-D 与点云融合的纯感知方案，结合 YOLO、FoundationStereo、
+                      FoundationPose、ViT、PointTransformerV3 完成容器分割、位姿估计、瓶口点与抓取点预测及倒水状态感知，
+                      提升光照变化、动态背景与透明反光场景下的鲁棒性。
+                      <span class="metric-row">
+                        <span class="metric">容器抓取 99%+</span>
+                        <span class="metric">倒水成功率 98%+</span>
+                        <span class="metric">展会 demo</span>
+                      </span>
+                    </li>
+                    <li>
+                      亚毫米级孔板抓放与灵巧手移液枪操作任务：系统对比 ACT、DiffusionPolicy、FlowMatching、VLA 与 WAM，
+                      训练验证 PI0.5、CogACT、Fast-WAM 等方案；最佳方法基于 FlowMatching，优化动作序列生成与插入阶段控制。
+                      <span class="metric-row">
+                        <span class="metric">真机抓放 95%+</span>
+                        <span class="metric">长程 demo</span>
+                      </span>
+                    </li>
+                    <li>
+                      优化真机策略部署链路：异步推理、动作 chunk 平滑执行、推理加速、相机流缓存与控制频率适配，
+                      降低推理与机械臂执行之间的阻塞，实现高精度任务中的连续低延迟执行。
+                    </li>
+                    <li>
+                      负责模型训练、评测、版本管理与发版交付，维护 GitLab 模型仓库、Benchmark、数采 SOP 与测试文档；
+                      完成 Docker / CUDA / TensorRT 环境适配、ROS2 服务联调、手眼标定及相机、夹爪、力传感器调试。
+                    </li>
+                  </ul>
+                  <div class="timeline-tags tag-row">
+                    <span>Imitation Learning</span>
+                    <span>FlowMatching</span>
+                    <span>Point Cloud</span>
+                    <span>ROS2</span>
+                    <span>TensorRT</span>
+                    <span>Data Pipeline</span>
+                  </div>
+                </div>
+              </article>
+
+              <article class="timeline-item">
+                <span class="dot" aria-hidden="true"></span>
+                <div class="timeline-top">
+                  <div>
+                    <p class="timeline-role">研究助理</p>
+                    <p class="timeline-org">西交利物浦大学 · 苏州，中国</p>
+                  </div>
+                  <p class="timeline-date">2023.11 – 2024.07</p>
+                </div>
+                <div class="timeline-body">
+                  <ul>
+                    <li>搭建端到端分类管道（Python / PyTorch），集成数据增强与高效 DataLoader，缩短训练时长并提升稳定性。</li>
+                    <li>对比 DenseNet、Inception、VGG 与 ViT 架构，统一优化策略（AdamW、余弦退火、K 折验证）取得最优指标。</li>
+                    <li>引入 Grad-CAM 与 Attention Rollout 可视化模型注意力，反哺数据增强策略并提升泛化能力。</li>
+                    <li>构建自动化评测闭环，输出混淆矩阵、ROC / AUC 与报告，提升模型对比与选择效率。</li>
+                  </ul>
+                  <div class="timeline-tags tag-row">
+                    <span>PyTorch</span>
+                    <span>ViT</span>
+                    <span>Explainability</span>
+                  </div>
+                </div>
+              </article>
+
+              <article class="timeline-item">
+                <span class="dot" aria-hidden="true"></span>
+                <div class="timeline-top">
+                  <div>
+                    <p class="timeline-role">测试工程师</p>
+                    <p class="timeline-org">Relx Elsevier 上海技术中心 · 上海，中国</p>
+                  </div>
+                  <p class="timeline-date">2023.05 – 2023.11</p>
+                </div>
+                <div class="timeline-body">
+                  <ul>
+                    <li>采用敏捷测试流程，开发自动化测试脚本（Python / Selenium / BrowserStack），提升软件可靠性与交付效率。</li>
+                    <li>探索强化学习在测试中的应用，设计基于 DQN 与 PPO 的用例生成框架。</li>
+                    <li>训练 RL 智能体识别 UI / API 不一致问题，结合 OpenAI Gym 与 TensorFlow / PyTorch 优化测试序列。</li>
+                    <li>通过自适应探索策略提升测试覆盖率 30%，减少冗余执行并加快缺陷发现。</li>
+                  </ul>
+                  <div class="timeline-tags tag-row">
+                    <span>Selenium</span>
+                    <span>RL for Testing</span>
+                    <span>Agile</span>
+                  </div>
+                </div>
+              </article>
+
+              <article class="timeline-item">
+                <span class="dot" aria-hidden="true"></span>
+                <div class="timeline-top">
+                  <div>
+                    <p class="timeline-role">研究助理 / 制造工程师</p>
+                    <p class="timeline-org">MagAssist · 苏州，中国</p>
+                  </div>
+                  <p class="timeline-date">2022.06 – 2023.03</p>
+                </div>
+                <div class="timeline-body">
+                  <ul>
+                    <li>搭建实验流程并规范数据采集，确保系统测试符合标准并支撑性能优化。</li>
+                    <li>使用 Python（NumPy / Pandas / Matplotlib）自动化数据处理，分析效率提升 40%。</li>
+                    <li>开发可视化工具实时展示关键指标，支持快速迭代与优化决策；应用信号处理提升流量与压差分析精度。</li>
+                    <li>使用 SolidWorks 设计与优化产品组件及生产夹具，开发参数化 3D CAD 模型并开展有限元分析（FEA）。</li>
+                  </ul>
+                  <div class="timeline-tags tag-row">
+                    <span>Signal Processing</span>
+                    <span>SolidWorks</span>
+                    <span>FEA</span>
+                  </div>
+                </div>
+              </article>
+
+              <article class="timeline-item">
+                <span class="dot" aria-hidden="true"></span>
+                <div class="timeline-top">
+                  <div>
+                    <p class="timeline-role">嵌入式软件工程师</p>
+                    <p class="timeline-org">NIIC 国讯芯微（苏州）科技有限公司 · 苏州，中国</p>
+                  </div>
+                  <p class="timeline-date">2021.06 – 2021.09</p>
+                </div>
+                <div class="timeline-body">
+                  <ul>
+                    <li>开发工业实时操作系统（RTOS），在嵌入式 Linux 上优化任务调度与内存管理。</li>
+                    <li>编写并测试底层设备驱动（C++），结合 Kselftest 自动化单元测试保障稳定性。</li>
+                    <li>在 ROS 环境下进行机器人稳定性与功能测试，验证实时响应与运动精度。</li>
+                    <li>使用 GDB 与 Valgrind 调试多线程应用，消除性能瓶颈。</li>
+                  </ul>
+                  <div class="timeline-tags tag-row">
+                    <span>RTOS</span>
+                    <span>C++</span>
+                    <span>Embedded Linux</span>
+                  </div>
+                </div>
+              </article>
+            </div>
+          </section>
+
+          <!-- ============ PROJECTS ============ -->
+          <section class="section reveal" data-section id="projects">
+            <div class="section-heading">
+              <p class="eyebrow">Projects</p>
+              <h2>项目经历</h2>
+              <p>精选机器人学习、3D 视觉与医学影像方向的项目，演示素材陆续补充。</p>
+            </div>
+
+            <article class="project-card reveal" id="project-pouring">
+              <div class="project-head">
+                <div class="project-title-row">
+                  <h3>透明容器抓取与双臂倒水</h3>
+                  <span class="repo-flag">Manipulation</span>
+                </div>
+                <p class="project-role">源络科技 · 2025.10 – 2026.07 · 上海，中国</p>
+              </div>
+              <div class="project-body">
+                <p class="project-lede">
+                  面向透明、反光容器的纯感知抓取与倒水方案，无需额外标记或先验模型，
+                  在光照变化与动态背景下保持稳定，已作为展会 demo 长时间连续运行。
+                </p>
+                <ul class="project-list">
+                  <li>RGB-D 与点云融合的感知栈：容器分割、6D 位姿估计、瓶口点与抓取点预测、倒水状态感知。</li>
+                  <li>组合 YOLO、FoundationStereo、FoundationPose、ViT 与 PointTransformerV3 处理透明材质的深度缺失问题。</li>
+                  <li>双臂协同的循环倒水流程，跑测基本无失败。</li>
+                </ul>
+                <div class="metric-row">
+                  <span class="metric">多材质容器抓取 99%+</span>
+                  <span class="metric">倒水成功率 98%+</span>
+                </div>
+                <div class="tag-row">
+                  <span>RGB-D</span>
+                  <span>Point Cloud</span>
+                  <span>6D Pose</span>
+                  <span>Dual-arm</span>
+                </div>
+                <div class="media-grid">
+                  <figure class="vcarousel" data-carousel data-count="1" tabindex="0"
+                    role="group" aria-label="透明容器双臂倒水演示">
+                    <div class="vcarousel-frame">
+                      <div class="vcarousel-slide is-active" data-label="双臂循环倒水完整流程">
+                        <video controls preload="none" playsinline muted loop
+                          poster="assets/images/posters/pouring-01.jpg">
+                          <source data-src="assets/videos/pouring-01.mp4" type="video/mp4" />
+                        </video>
+                      </div>
+                    </div>
+                    <figcaption class="vcarousel-foot">
+                      <span>透明容器双臂倒水（真机）</span>
+                      <span class="vcarousel-label">双臂循环倒水完整流程</span>
+                    </figcaption>
+                  </figure>
+                </div>
+              </div>
+            </article>
+
+            <article class="project-card reveal" id="project-wellplate">
+              <div class="project-head">
+                <div class="project-title-row">
+                  <h3>亚毫米级孔板抓放与灵巧手移液</h3>
+                  <span class="repo-flag">Policy</span>
+                </div>
+                <p class="project-role">源络科技 · 2025.10 – 2026.07 · 上海，中国</p>
+              </div>
+              <div class="project-body">
+                <p class="project-lede">
+                  孔板抓取并插入孔槽的精细装配任务，公差要求达亚毫米级；
+                  系统对比多类模仿学习与策略方法后，以 FlowMatching 方案取得最佳真机表现。
+                </p>
+                <ul class="project-list">
+                  <li>横向对比 ACT、DiffusionPolicy、FlowMatching、VLA 与 WAM，训练验证 PI0.5、CogACT、Fast-WAM 等模型。</li>
+                  <li>针对插入阶段优化动作序列生成与控制策略，缓解接触阶段的精度损失。</li>
+                  <li>扩展至灵巧手操作移液枪的精细吸液、移液任务。</li>
+                  <li>作为长程 demo 在展会连续演示。</li>
+                </ul>
+                <div class="metric-row">
+                  <span class="metric">真机抓放成功率 95%+</span>
+                </div>
+                <div class="tag-row">
+                  <span>FlowMatching</span>
+                  <span>DiffusionPolicy</span>
+                  <span>ACT</span>
+                  <span>Dexterous Hand</span>
+                </div>
+                <div class="media-grid">
+                  <figure class="vcarousel" data-carousel data-count="3" tabindex="0"
+                    role="group" aria-label="孔板抓取，共 3 段视频">
+                    <div class="vcarousel-frame">
+                      <button class="vcarousel-nav vcarousel-prev" type="button" aria-label="上一段视频">‹</button>
+                      <button class="vcarousel-nav vcarousel-next" type="button" aria-label="下一段视频">›</button>
+                      <span class="vcarousel-counter" aria-hidden="true">1 / 3</span>
+                      <div class="vcarousel-slide is-active" data-label="抓取特写">
+                        <video controls preload="none" playsinline muted loop
+                          poster="assets/images/posters/grasp-01.jpg">
+                          <source data-src="assets/videos/grasp-01.mp4" type="video/mp4" />
+                        </video>
+                      </div>
+                      <div class="vcarousel-slide" data-label="重复性验证 · 第 1 次">
+                        <video controls preload="none" playsinline muted loop
+                          poster="assets/images/posters/grasp-02.jpg">
+                          <source data-src="assets/videos/grasp-02.mp4" type="video/mp4" />
+                        </video>
+                      </div>
+                      <div class="vcarousel-slide" data-label="重复性验证 · 第 2 次">
+                        <video controls preload="none" playsinline muted loop
+                          poster="assets/images/posters/grasp-03.jpg">
+                          <source data-src="assets/videos/grasp-03.mp4" type="video/mp4" />
+                        </video>
+                      </div>
+                    </div>
+                    <figcaption class="vcarousel-foot">
+                      <span>孔板抓取</span>
+                      <span class="vcarousel-label">抓取特写</span>
+                      <span class="vcarousel-dots">
+                        <button class="vcarousel-dot is-active" type="button" aria-label="切换到 抓取特写"></button>
+                        <button class="vcarousel-dot" type="button" aria-label="切换到 重复性验证 第 1 次"></button>
+                        <button class="vcarousel-dot" type="button" aria-label="切换到 重复性验证 第 2 次"></button>
+                      </span>
+                    </figcaption>
+                  </figure>
+
+                  <figure class="vcarousel" data-carousel data-count="7" tabindex="0"
+                    role="group" aria-label="孔板插入孔槽，共 7 段视频">
+                    <div class="vcarousel-frame">
+                      <button class="vcarousel-nav vcarousel-prev" type="button" aria-label="上一段视频">‹</button>
+                      <button class="vcarousel-nav vcarousel-next" type="button" aria-label="下一段视频">›</button>
+                      <span class="vcarousel-counter" aria-hidden="true">1 / 7</span>
+                      <div class="vcarousel-slide is-active" data-label="插入特写">
+                        <video controls preload="none" playsinline muted loop
+                          poster="assets/images/posters/insert-01.jpg">
+                          <source data-src="assets/videos/insert-01.mp4" type="video/mp4" />
+                        </video>
+                      </div>
+                      <div class="vcarousel-slide" data-label="重复性验证 · 第 1 次">
+                        <video controls preload="none" playsinline muted loop
+                          poster="assets/images/posters/insert-02.jpg">
+                          <source data-src="assets/videos/insert-02.mp4" type="video/mp4" />
+                        </video>
+                      </div>
+                      <div class="vcarousel-slide" data-label="重复性验证 · 第 2 次">
+                        <video controls preload="none" playsinline muted loop
+                          poster="assets/images/posters/insert-03.jpg">
+                          <source data-src="assets/videos/insert-03.mp4" type="video/mp4" />
+                        </video>
+                      </div>
+                      <div class="vcarousel-slide" data-label="重复性验证 · 第 3 次">
+                        <video controls preload="none" playsinline muted loop
+                          poster="assets/images/posters/insert-04.jpg">
+                          <source data-src="assets/videos/insert-04.mp4" type="video/mp4" />
+                        </video>
+                      </div>
+                      <div class="vcarousel-slide" data-label="重复性验证 · 第 4 次">
+                        <video controls preload="none" playsinline muted loop
+                          poster="assets/images/posters/insert-05.jpg">
+                          <source data-src="assets/videos/insert-05.mp4" type="video/mp4" />
+                        </video>
+                      </div>
+                      <div class="vcarousel-slide" data-label="长程连续执行 · 第 1 段">
+                        <video controls preload="none" playsinline muted loop
+                          poster="assets/images/posters/insert-06.jpg">
+                          <source data-src="assets/videos/insert-06.mp4" type="video/mp4" />
+                        </video>
+                      </div>
+                      <div class="vcarousel-slide" data-label="长程连续执行 · 第 2 段">
+                        <video controls preload="none" playsinline muted loop
+                          poster="assets/images/posters/insert-07.jpg">
+                          <source data-src="assets/videos/insert-07.mp4" type="video/mp4" />
+                        </video>
+                      </div>
+                    </div>
+                    <figcaption class="vcarousel-foot">
+                      <span>孔板插入孔槽（亚毫米级）</span>
+                      <span class="vcarousel-label">插入特写</span>
+                      <span class="vcarousel-dots">
+                        <button class="vcarousel-dot is-active" type="button" aria-label="切换到 插入特写"></button>
+                        <button class="vcarousel-dot" type="button" aria-label="切换到 重复性验证 第 1 次"></button>
+                        <button class="vcarousel-dot" type="button" aria-label="切换到 重复性验证 第 2 次"></button>
+                        <button class="vcarousel-dot" type="button" aria-label="切换到 重复性验证 第 3 次"></button>
+                        <button class="vcarousel-dot" type="button" aria-label="切换到 重复性验证 第 4 次"></button>
+                        <button class="vcarousel-dot" type="button" aria-label="切换到 长程连续执行 第 1 段"></button>
+                        <button class="vcarousel-dot" type="button" aria-label="切换到 长程连续执行 第 2 段"></button>
+                      </span>
+                    </figcaption>
+                  </figure>
+
+                  <figure class="vcarousel" data-carousel data-count="3" tabindex="0"
+                    role="group" aria-label="整机抓放孔板（单臂 + 移动底盘），共 3 段视频">
+                    <div class="vcarousel-frame">
+                      <button class="vcarousel-nav vcarousel-prev" type="button" aria-label="上一段视频">‹</button>
+                      <button class="vcarousel-nav vcarousel-next" type="button" aria-label="下一段视频">›</button>
+                      <span class="vcarousel-counter" aria-hidden="true">1 / 3</span>
+                      <div class="vcarousel-slide is-active" data-label="整机抓取 · 第 1 次">
+                        <video controls preload="none" playsinline muted loop
+                          poster="assets/images/posters/fullrobot-01.jpg">
+                          <source data-src="assets/videos/fullrobot-01.mp4" type="video/mp4" />
+                        </video>
+                      </div>
+                      <div class="vcarousel-slide" data-label="整机抓取 · 第 2 次">
+                        <video controls preload="none" playsinline muted loop
+                          poster="assets/images/posters/fullrobot-02.jpg">
+                          <source data-src="assets/videos/fullrobot-02.mp4" type="video/mp4" />
+                        </video>
+                      </div>
+                      <div class="vcarousel-slide" data-label="抓取到放置完整流程">
+                        <video controls preload="none" playsinline muted loop
+                          poster="assets/images/posters/fullrobot-03.jpg">
+                          <source data-src="assets/videos/fullrobot-03.mp4" type="video/mp4" />
+                        </video>
+                      </div>
+                    </div>
+                    <figcaption class="vcarousel-foot">
+                      <span>整机抓放孔板（单臂 + 移动底盘）</span>
+                      <span class="vcarousel-label">整机抓取 · 第 1 次</span>
+                      <span class="vcarousel-dots">
+                        <button class="vcarousel-dot is-active" type="button" aria-label="切换到 整机抓取 第 1 次"></button>
+                        <button class="vcarousel-dot" type="button" aria-label="切换到 整机抓取 第 2 次"></button>
+                        <button class="vcarousel-dot" type="button" aria-label="切换到 抓取到放置完整流程"></button>
+                      </span>
+                    </figcaption>
+                  </figure>
+
+                  <figure class="vcarousel" data-carousel data-count="1" tabindex="0"
+                    role="group" aria-label="灵巧手移液枪操作">
+                    <div class="vcarousel-frame">
+                      <div class="vcarousel-slide is-active" data-label="吸液与移液流程">
+                        <video controls preload="none" playsinline muted loop
+                          poster="assets/images/posters/pipette-01.jpg">
+                          <source data-src="assets/videos/pipette-01.mp4" type="video/mp4" />
+                        </video>
+                      </div>
+                    </div>
+                    <figcaption class="vcarousel-foot">
+                      <span>灵巧手移液枪操作</span>
+                      <span class="vcarousel-label">吸液与移液流程</span>
+                    </figcaption>
+                  </figure>
+                </div>
+              </div>
+            </article>
+
+            <article class="project-card reveal" id="project-datapipeline">
+              <div class="project-head">
+                <div class="project-title-row">
+                  <h3>多源机器人数据采集与质检管线</h3>
+                  <span class="repo-flag">Infra</span>
+                </div>
+                <p class="project-role">源络科技 · 2025.10 – 2026.07 · 上海，中国</p>
+              </div>
+              <div class="project-body">
+                <p class="project-lede">
+                  支撑多任务、多平台机器人学习的数据基础设施，把「采集 → 质检 → 训练格式」做成可复现流程，
+                  让数据问题在进入训练之前就被拦住。
+                </p>
+                <ul class="project-list">
+                  <li>采集方式覆盖 MOCAP 动捕房、3D 鼠标遥操作、VR 遥操作、协作臂拖动示教与 UMI。</li>
+                  <li>适配自研人形机器人、Franka、Rokae 等平台的采集与任务复现。</li>
+                  <li>自动化 QC：RGB-D 与点云完整性、相机标定、时间戳同步、动作轨迹连续性、rerun 异常样本筛查。</li>
+                  <li>原始数据自动转换为 LeRobot、DexData 等训练格式，配套数采 SOP 与测试文档。</li>
+                </ul>
+                <div class="tag-row">
+                  <span>Teleoperation</span>
+                  <span>LeRobot</span>
+                  <span>Calibration</span>
+                  <span>QC Automation</span>
+                </div>
+                <div class="media-grid">
+                  <figure class="vcarousel" data-carousel data-count="1" tabindex="0"
+                    role="group" aria-label="3D 鼠标遥操作采集">
+                    <div class="vcarousel-frame">
+                      <div class="vcarousel-slide is-active" data-label="单臂精细位姿控制">
+                        <video controls preload="none" playsinline muted loop
+                          poster="assets/images/posters/teleop-01.jpg">
+                          <source data-src="assets/videos/teleop-01.mp4" type="video/mp4" />
+                        </video>
+                      </div>
+                    </div>
+                    <figcaption class="vcarousel-foot">
+                      <span>3D 鼠标遥操作采集</span>
+                      <span class="vcarousel-label">单臂精细位姿控制</span>
+                    </figcaption>
+                  </figure>
+                  <figure class="vcarousel" data-carousel data-count="1" tabindex="0"
+                    role="group" aria-label="VR 遥操作采集">
+                    <div class="vcarousel-frame">
+                      <div class="vcarousel-slide is-active" data-label="双臂动作映射采集">
+                        <video controls preload="none" playsinline muted loop
+                          poster="assets/images/posters/teleop-02.jpg">
+                          <source data-src="assets/videos/teleop-02.mp4" type="video/mp4" />
+                        </video>
+                      </div>
+                    </div>
+                    <figcaption class="vcarousel-foot">
+                      <span>VR 遥操作采集</span>
+                      <span class="vcarousel-label">双臂动作映射采集</span>
+                    </figcaption>
+                  </figure>
+                </div>
+              </div>
+            </article>
+
+            <article class="project-card reveal" id="project-rl-seg">
+              <div class="project-head">
+                <div class="project-title-row">
+                  <h3>可提示区域探索的前列腺癌分割</h3>
+                  <span class="repo-flag">Research</span>
+                </div>
+                <p class="project-role">硕士毕业设计 · UCL · 2024.09 – 2025.09 · 伦敦，英国</p>
+              </div>
+              <div class="project-body">
+                <p class="project-lede">
+                  把三维医学图像分割建模成序贯决策问题，用可提示的区域探索降低标注依赖，
+                  以最小标注工作量达到专家级勾画质量；成果以第一作者发表于 IJCARS。
+                  <a class="accent" href="https://doi.org/10.1007/s11548-026-03628-w" target="_blank" rel="noopener">
+                    查看论文 ↗
+                  </a>
+                </p>
+                <ul class="project-list">
+                  <li>设计定制 RL 环境（3D 体素状态 + 提示引导），基于 PPO 提升复杂分割任务中的探索效率。</li>
+                  <li>构建多尺度 CNN + 注意力的 Actor-Critic 网络，引入自适应奖励（IoU、Dice、边界精度）。</li>
+                  <li>结合区域生长、自适应阈值与多模态相似性度量，增强三维边界提取鲁棒性。</li>
+                  <li>实现分布式训练（DDP）、动态批量与混合精度，加速大规模 3D 训练并优化显存利用率。</li>
+                  <li>集成 Grad-CAM 与 Attention Rollout 提升可解释性，结合 CRF 与形态学后处理优化结果。</li>
+                </ul>
+                <div class="tag-row">
+                  <span>PPO</span>
+                  <span>Actor-Critic</span>
+                  <span>3D Segmentation</span>
+                  <span>DDP</span>
+                </div>
+                <div class="media-grid">
+                  <figure class="media-card">
+                    <a class="figure-link" href="assets/images/paper/fig1.png" target="_blank"
+                      rel="noopener" aria-label="放大查看方法框架图">
+                      <div class="media-frame media-figure">
+                        <img src="assets/images/paper/fig1.png"
+                          alt="方法框架图：用户提示经区域生长得到初始分割，智能体在 MDP 环境中依据熵图与 Dice 奖励迭代预测新的种子点"
+                          width="1200" height="698" loading="lazy" decoding="async" />
+                      </div>
+                    </a>
+                    <figcaption>
+                      方法框架：基于强化学习的可提示分割流程
+                      <span class="figure-credit">Fig. 1 · IJCARS 2026 · CC BY 4.0</span>
+                    </figcaption>
+                  </figure>
+                  <figure class="media-card">
+                    <a class="figure-link" href="assets/images/paper/fig2.png" target="_blank"
+                      rel="noopener" aria-label="放大查看分割结果对比图">
+                      <div class="media-frame media-figure">
+                        <img src="assets/images/paper/fig2.png"
+                          alt="PROMIS 数据集分割结果：每组三列依次为原始影像、专家标注与本方法预测结果"
+                          width="1200" height="445" loading="lazy" decoding="async" />
+                      </div>
+                    </a>
+                    <figcaption>
+                      PROMIS 数据集分割结果（原图 / 标注 / 预测）
+                      <span class="figure-credit">Fig. 2 · IJCARS 2026 · CC BY 4.0</span>
+                    </figcaption>
+                  </figure>
+                  <p class="figure-license">
+                    图片取自本人论文
+                    <a class="accent" href="https://doi.org/10.1007/s11548-026-03628-w" target="_blank" rel="noopener">
+                      Yang et al., IJCARS 2026
+                    </a>
+                    ，依据
+                    <a class="accent" href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener">
+                      CC BY 4.0
+                    </a>
+                    许可使用。
+                  </p>
+                </div>
+              </div>
+            </article>
+
+            <article class="project-card reveal" id="project-isaaclab">
+              <div class="project-head">
+                <div class="project-title-row">
+                  <h3>NVIDIA IsaacLab 仿真实践</h3>
+                  <span class="repo-flag">Sim</span>
+                </div>
+                <p class="project-role">独立项目 · 2025.03 – 2025.05 · 伦敦，英国</p>
+              </div>
+              <div class="project-body">
+                <ul class="project-list">
+                  <li>基于 IsaacLab 搭建多机器人仿真环境，完成机器人建模与地形生成，支持物理精确的任务测试。</li>
+                  <li>在 Rough-AnyMal 与 Ant 任务中训练 PPO 策略，掌握 RL-Gym 接口与 VecEnv 并行加速流程。</li>
+                  <li>利用 USD 与 Python 脚本定制机器人模型与仿真参数，分析不同策略对收敛与性能的影响。</li>
+                  <li>配置 GPU 加速物理引擎，设计奖励函数与课程学习策略，开展 sim-to-real 可迁移性评估。</li>
+                </ul>
+                <div class="tag-row">
+                  <span>IsaacLab</span>
+                  <span>PPO</span>
+                  <span>USD</span>
+                  <span>Sim-to-Real</span>
+                </div>
+              </div>
+            </article>
+
+            <article class="project-card reveal" id="project-slam">
+              <div class="project-head">
+                <div class="project-title-row">
+                  <h3>ORB-SLAM2 性能评估与实景测试</h3>
+                  <span class="repo-flag">SLAM</span>
+                </div>
+                <p class="project-role">独立项目 · 2025.01 – 2025.04 · 伦敦，英国</p>
+              </div>
+              <div class="project-body">
+                <ul class="project-list">
+                  <li>在 TUM、KITTI 及自录视频上测试 ORB-SLAM2，多配置对比特征点、回环检测与异常点剔除的影响。</li>
+                  <li>修改 C++ 源码（Optimizer、LoopClosing 等），逐步禁用模块以分析对位姿估计精度的贡献。</li>
+                  <li>利用 COLMAP 执行稀疏重建，用 EVO 对齐轨迹并计算 APE 进行精度评估。</li>
+                  <li>室内环境实现 &lt;0.11m RMSE，同时定位出动态室外场景下的鲁棒性瓶颈。</li>
+                </ul>
+                <div class="metric-row">
+                  <span class="metric">室内轨迹 &lt;0.11m RMSE</span>
+                </div>
+                <div class="tag-row">
+                  <span>ORB-SLAM2</span>
+                  <span>COLMAP</span>
+                  <span>EVO</span>
+                  <span>C++</span>
+                </div>
+              </div>
+            </article>
+
+            <article class="project-card reveal" id="project-ros-grasp">
+              <div class="project-head">
+                <div class="project-title-row">
+                  <h3>基于 ROS 的物体检测与抓取放置系统</h3>
+                  <span class="repo-flag">ROS</span>
+                </div>
+                <p class="project-role">独立项目 · 2025.02 – 2025.03 · 伦敦，英国</p>
+              </div>
+              <div class="project-body">
+                <ul class="project-list">
+                  <li>基于 ROS MoveIt! 规划与控制 Panda 机械臂，实现完整抓取与放置流程。</li>
+                  <li>融合 RGB-D 图像与点云（OpenCV / PCL），通过 HSV 颜色分割实现多类别物体检测与分类。</li>
+                  <li>设计模块化 ROS 服务架构，实现 Python 节点与 C++ 类对接，提高可维护性与扩展性。</li>
+                  <li>采用 CMake 与 package.xml 管理构建，保证规划框架与实时传感器流的兼容性。</li>
+                </ul>
+                <div class="tag-row">
+                  <span>MoveIt!</span>
+                  <span>PCL</span>
+                  <span>OpenCV</span>
+                  <span>Panda</span>
+                </div>
+              </div>
+            </article>
+
+            <article class="project-card reveal" id="project-binpacking">
+              <div class="project-head">
+                <div class="project-title-row">
+                  <h3>基于 DRL 与 3D 视觉的机器人在线箱体打包</h3>
+                  <span class="repo-flag">RL</span>
+                </div>
+                <p class="project-role">独立项目 · 2023.09 – 2024.07 · 苏州，中国</p>
+              </div>
+              <div class="project-body">
+                <ul class="project-list">
+                  <li>开发基于 PPO 与 DQN 的强化学习策略，优化动态打包任务中的实时决策。</li>
+                  <li>集成 Open3D 与 ROS 构建 3D 视觉管线，提升物体检测、深度与姿态估计精度。</li>
+                  <li>通过奖励塑形与课程学习提升训练效率，保证复杂场景下的鲁棒性。</li>
+                  <li>在 ROS 环境完成系统部署与验证，实现高精度托盘打包操作。</li>
+                </ul>
+                <div class="tag-row">
+                  <span>PPO / DQN</span>
+                  <span>Open3D</span>
+                  <span>ROS</span>
+                </div>
+              </div>
+            </article>
+
+            <article class="project-card reveal" id="project-medical">
+              <div class="project-head">
+                <div class="project-title-row">
+                  <h3>医学影像与信号处理项目集</h3>
+                  <span class="repo-flag">Medical AI</span>
+                </div>
+                <p class="project-role">UCL / XJTLU · 2022 – 2025</p>
+              </div>
+              <div class="project-body">
+                <p class="project-lede">
+                  围绕医学影像生成、质量评估与信号数字化的一组研究型项目。
+                </p>
+                <ul class="project-list">
+                  <li>
+                    <strong>MRI 到 CT 跨模态生成</strong>（2024.12 – 2025.02）：构建 3D Transformer 去噪扩散模型，
+                    集成 L1、感知与 SSIM 多损失，结合 3D Slicer TotalSegmentator 验证解剖一致性。
+                  </li>
+                  <li>
+                    <strong>经食道超声心动图（TEE）质量分析</strong>（2025.01 – 2025.03）：Python 图像分析管线，
+                    统计建模量化评分与图像特征关系，OpenCV ECC 刚性配准分析旋转平移与质量相关性。
+                  </li>
+                  <li>
+                    <strong>颅内压（ICP）图像信号提取</strong>（2023.06 – 2023.09）：OpenCV 自动化管线从图像重建时序波形，
+                    自适应阈值与形态学算法去除反射并增强信号清晰度。
+                  </li>
+                  <li>
+                    <strong>ISIC 2024 皮肤癌分类</strong>（2024.08 – 2024.09）：3D-TBP 数据，SMOTE、加权损失与 FocalLoss
+                    缓解极端类别不平衡，集成 CNN、ViT 与多分类器。
+                  </li>
+                </ul>
+                <div class="tag-row">
+                  <span>Diffusion</span>
+                  <span>Medical Imaging</span>
+                  <span>OpenCV</span>
+                  <span>scikit-learn</span>
+                </div>
+              </div>
+            </article>
+
+            <article class="project-card reveal" id="project-industrial">
+              <div class="project-head">
+                <div class="project-title-row">
+                  <h3>工业视觉与嵌入式系统项目集</h3>
+                  <span class="repo-flag">Vision / Embedded</span>
+                </div>
+                <p class="project-role">XJTLU · 汇川技术 · 2021 – 2024</p>
+              </div>
+              <div class="project-body">
+                <ul class="project-list">
+                  <li>
+                    <strong>基于迁移学习的自动化制造缺陷检测</strong>（本科毕设，2023.09 – 2024.08）：
+                    CNN 与 ViT 特征提取结合迁移与集成学习，分类准确率 99%+，成果发表并在 RiTA 2023 做会议报告。
+                  </li>
+                  <li>
+                    <strong>AI 智能手术器械库存管理</strong>（2022.06 – 2022.12）：YOLOv5 与 CNN 实时检测分类，
+                    部署于 NVIDIA Jetson Nano 并优化嵌入式推理速度。
+                  </li>
+                  <li>
+                    <strong>Raspberry Pi 4B + STM32 自主机器人</strong>（2022.09 – 2023.04）：LIDAR SLAM 定位导航，
+                    ROS Noetic 下路径规划与避障，DQN 在 Gazebo 中验证自主决策。
+                  </li>
+                  <li>
+                    <strong>细胞图像分析系统</strong>（2023.06 – 2023.08）：C++ 与 OpenCV 实现并优化为 Android 端部署，
+                    量化数量、圆度、面积与边界等形态学指标。
+                  </li>
+                  <li>
+                    <strong>红外有毒气体检测</strong>、<strong>超声传感器系统</strong>、<strong>智能坐垫</strong>、
+                    <strong>B&amp;R PLC 三轴控制</strong>：覆盖 ViT 迁移学习、STM32 实时采集、FFT 信号处理与 ST 编程。
+                  </li>
+                </ul>
+                <div class="tag-row">
+                  <span>YOLOv5</span>
+                  <span>Jetson Nano</span>
+                  <span>LIDAR SLAM</span>
+                  <span>STM32</span>
+                  <span>PLC</span>
+                </div>
+              </div>
+            </article>
+
+            <aside class="more-projects">
+              <p class="more-projects-title">更多项目</p>
+              <p>
+                以上为精选项目，完整项目经历与技术细节详见最新简历。欢迎通过
+                <a class="accent" href="mailto:yjunqing12@163.com">邮件</a>
+                索取或交流。
+              </p>
+            </aside>
+          </section>
+
+          <!-- ============ PUBLICATIONS ============ -->
+          <section class="section reveal" data-section id="publications">
+            <div class="section-heading">
+              <p class="eyebrow">Publications</p>
+              <h2>学术论文</h2>
+              <p>6 篇已发表论文，其中 4 篇第一作者。</p>
+            </div>
+
+            <ol class="pub-list">
+              <li class="pub-item">
+                <p class="pub-title">可提示区域探索分割实现最小工作量专家级前列腺癌勾画</p>
+                <p class="pub-title-en">
+                  Promptable segmentation with region exploration enables minimal-effort expert-level
+                  prostate cancer delineation
+                </p>
+                <p class="pub-venue">
+                  International Journal of Computer Assisted Radiology and Surgery (IJCARS), vol. 21(5), pp. 997–1005, 2026
+                  · IPCAI 2026 接收
+                </p>
+                <p class="pub-foot">
+                  <span class="pub-badge first">第一作者</span>
+                  <span>已发表</span>
+                  <a class="accent" href="https://doi.org/10.1007/s11548-026-03628-w" target="_blank" rel="noopener">
+                    DOI
+                  </a>
+                  <a class="accent" href="https://arxiv.org/abs/2602.17813" target="_blank" rel="noopener">
+                    arXiv
+                  </a>
+                </p>
+              </li>
+
+              <li class="pub-item">
+                <p class="pub-title">表面缺陷分类：利用 Transformer 与迁移学习提升工业应用精度</p>
+                <p class="pub-title-en">
+                  Surface defect classification: leveraging transformer and transfer learning models for
+                  enhanced precision in industrial applications
+                </p>
+                <p class="pub-venue">The International Journal of Advanced Manufacturing Technology, vol. 139, pp. 4141–4152, 2025</p>
+                <p class="pub-foot">
+                  <span class="pub-badge first">第一作者</span>
+                  <span>已发表</span>
+                  <a class="accent" href="https://doi.org/10.1007/s00170-025-16156-9" target="_blank" rel="noopener">
+                    DOI
+                  </a>
+                </p>
+              </li>
+
+              <li class="pub-item">
+                <p class="pub-title">表面缺陷检测：一种基于特征迁移学习的方法</p>
+                <p class="pub-title-en">
+                  Surface Defect Detection: An Approach Utilising Feature-Based Transfer Learning
+                </p>
+                <p class="pub-venue">
+                  Robot Intelligence Technology and Applications 8 (RiTA 2023), Springer LNNS, pp. 58–65, 2024
+                </p>
+                <p class="pub-foot">
+                  <span class="pub-badge first">第一作者</span>
+                  <span>已发表</span>
+                  <a class="accent" href="https://doi.org/10.1007/978-3-031-70687-5_6" target="_blank" rel="noopener">
+                    DOI
+                  </a>
+                </p>
+              </li>
+
+              <li class="pub-item">
+                <p class="pub-title">不同特征提取模型在 CT-ICH 数据分析中的分类器性能变异性研究</p>
+                <p class="pub-title-en">
+                  Performance Variability of Classifiers with Different Feature Extraction Models in
+                  CT-ICH Data Analysis
+                </p>
+                <p class="pub-venue">
+                  Computer Methods in Biomechanics and Biomedical Engineering: Imaging &amp; Visualization
+                </p>
+                <p class="pub-foot">
+                  <span class="pub-badge first">第一作者</span>
+                  <span>已发表</span>
+                </p>
+              </li>
+
+              <li class="pub-item">
+                <p class="pub-title">改善糖尿病视网膜病变分类：基于 MobileNet 特征的迁移学习与逻辑回归研究</p>
+                <p class="pub-title-en">
+                  Improving Diabetic Retinopathy Classification: A MobileNet Feature-Based Transfer
+                  Learning with Logistic Regression Investigation
+                </p>
+                <p class="pub-venue">
+                  Robot Intelligence Technology and Applications 8 (RiTA 2023), Springer LNNS, pp. 147–153, 2024
+                </p>
+                <p class="pub-foot">
+                  <span class="pub-badge second">第二作者</span>
+                  <span>已发表</span>
+                  <a class="accent" href="https://doi.org/10.1007/978-3-031-70687-5_16" target="_blank" rel="noopener">
+                    DOI
+                  </a>
+                </p>
+              </li>
+
+              <li class="pub-item">
+                <p class="pub-title">基于特征迁移学习的脑肿瘤分类</p>
+                <p class="pub-title-en">
+                  The Classification of Brain Tumours by Means of Feature-Based Transfer Learning
+                </p>
+                <p class="pub-venue">
+                  Robot Intelligence Technology and Applications 8 (RiTA 2023), Springer LNNS, pp. 123–128, 2024
+                </p>
+                <p class="pub-foot">
+                  <span class="pub-badge second">第二作者</span>
+                  <span>已发表</span>
+                  <a class="accent" href="https://doi.org/10.1007/978-3-031-70687-5_13" target="_blank" rel="noopener">
+                    DOI
+                  </a>
+                </p>
+              </li>
+            </ol>
+
+            <div class="section-heading" style="margin-top: 2.4rem">
+              <p class="eyebrow">Talk</p>
+              <h2>学术会议演讲</h2>
+            </div>
+
+            <article class="project-card">
+              <div class="project-head">
+                <div class="project-title-row">
+                  <h3>第 11 届机器人智能技术与应用国际会议（RiTA 2023）</h3>
+                  <span class="repo-flag">Talk</span>
+                </div>
+                <p class="project-role">报告主题：基于迁移学习的自动化制造缺陷检测 · 2023.12 · 苏州，中国</p>
+              </div>
+              <div class="project-body">
+                <ul class="project-list">
+                  <li>报告迁移学习与深度学习在制造缺陷检测中的应用及自动化质量控制潜力。</li>
+                  <li>对比 CNN 与 ViT 在分类精度上的表现，提供实验验证结果。</li>
+                  <li>演示 Grad-CAM 与 Attention Maps 在缺陷分析中的可解释性价值。</li>
+                  <li>分享性能优化策略与工业落地经验。</li>
+                </ul>
+              </div>
+            </article>
+
+            <div class="section-heading" style="margin-top: 2.4rem">
+              <p class="eyebrow">Awards</p>
+              <h2>荣誉与奖项</h2>
+            </div>
+
+            <div class="award-grid">
+              <article class="award-card">
+                <p class="award-year">2023</p>
+                <p class="award-name">二等奖 Honorable Mention</p>
+                <p class="award-event">数学建模竞赛 Predicting Wordle Results · 在线</p>
+              </article>
+              <article class="award-card">
+                <p class="award-year">2019</p>
+                <p class="award-name">Innovation in Control Award</p>
+                <p class="award-event">FIRST 机器人竞赛世界锦标赛 · Rockwell Automation 赞助 · 休斯顿，美国</p>
+              </article>
+              <article class="award-card">
+                <p class="award-year">2019</p>
+                <p class="award-name">世锦赛决赛亚军 Regional Finalists</p>
+                <p class="award-event">FIRST 机器人竞赛世界锦标赛 · 休斯顿，美国</p>
+              </article>
+              <article class="award-card">
+                <p class="award-year">2018</p>
+                <p class="award-name">Rookie All-Star Award</p>
+                <p class="award-event">FIRST 机器人竞赛（FRC）· 深圳，中国</p>
+              </article>
+              <article class="award-card">
+                <p class="award-year">2018</p>
+                <p class="award-name">工业设计奖 Industrial Design Award</p>
+                <p class="award-event">中国机器人挑战赛（CRC）· 深圳，中国</p>
+              </article>
+              <article class="award-card">
+                <p class="award-year">2018</p>
+                <p class="award-name">工业设计奖 Industrial Design Award</p>
+                <p class="award-event">FTC 机器人竞赛 · 郑州，中国</p>
+              </article>
+            </div>
+          </section>
+
+          <!-- ============ STACK ============ -->
+          <section class="section reveal" data-section id="stack">
+            <div class="section-heading">
+              <p class="eyebrow">Stack</p>
+              <h2>技术栈</h2>
+              <p>机器人学习与真机部署中实际使用的方法、工具与工程实践。</p>
+            </div>
+
+            <div class="systems-grid">
+              <article class="system-card">
+                <h3>Robot Learning</h3>
+                <p>面向真实机器人操作任务的策略学习方法。</p>
+                <ul class="system-list">
+                  <li>模仿学习 / 策略学习</li>
+                  <li>ACT、DiffusionPolicy、FlowMatching</li>
+                  <li>VLA、WAM（PI0.5、CogACT、Fast-WAM）</li>
+                  <li>强化学习（PPO、DQN）</li>
+                  <li>训练评测、Benchmark 与版本管理</li>
+                </ul>
+              </article>
+
+              <article class="system-card">
+                <h3>Perception &amp; 3D Vision</h3>
+                <p>以感知驱动的抓取与操作决策。</p>
+                <ul class="system-list">
+                  <li>RGB-D 与点云融合</li>
+                  <li>FoundationStereo、FoundationPose</li>
+                  <li>ViT、PointNet、PointTransformer</li>
+                  <li>YOLO 检测与分割</li>
+                  <li>手眼标定、位姿估计</li>
+                </ul>
+              </article>
+
+              <article class="system-card">
+                <h3>Robotics Systems</h3>
+                <p>真实机器人平台的集成与调试。</p>
+                <ul class="system-list">
+                  <li>ROS / ROS2、MoveIt!</li>
+                  <li>Franka、Rokae、自研人形机器人</li>
+                  <li>灵巧手、夹爪、力传感器</li>
+                  <li>遥操作：MOCAP、VR、3D 鼠标、UMI</li>
+                  <li>异步推理与低延迟执行</li>
+                </ul>
+              </article>
+
+              <article class="system-card">
+                <h3>Simulation</h3>
+                <p>仿真环境搭建与 sim-to-real 评估。</p>
+                <ul class="system-list">
+                  <li>NVIDIA IsaacLab、Isaac Sim</li>
+                  <li>Gazebo、RViz</li>
+                  <li>USD 建模、地形生成</li>
+                  <li>VecEnv 并行训练</li>
+                  <li>课程学习与奖励设计</li>
+                </ul>
+              </article>
+
+              <article class="system-card">
+                <h3>Engineering</h3>
+                <p>开发、部署与协作工具链。</p>
+                <ul class="system-list">
+                  <li>Python、C++、Linux</li>
+                  <li>PyTorch、OpenCV、PCL / Open3D</li>
+                  <li>Docker、CUDA、TensorRT</li>
+                  <li>Git / GitLab、CI 与发版流程</li>
+                  <li>rerun、数据可视化与回放</li>
+                </ul>
+              </article>
+
+              <article class="system-card">
+                <h3>Medical &amp; Industrial AI</h3>
+                <p>医学影像与工业视觉方向的研究积累。</p>
+                <ul class="system-list">
+                  <li>3D 医学图像分割与生成</li>
+                  <li>扩散模型、Transformer</li>
+                  <li>迁移学习与集成学习</li>
+                  <li>Grad-CAM、Attention Rollout</li>
+                  <li>3D Slicer、统计建模与评测</li>
+                </ul>
+              </article>
+            </div>
+          </section>
+        </div>
+      </main>
+
+      <footer class="site-footer">
+        <p>杨骏青 Junqing Yang · Robotics &amp; Embodied AI · Personal Portfolio</p>
+      </footer>
+    </div>
+
+    <script src="script.js?v=20260901-m"></script>
+  </body>
+</html>
