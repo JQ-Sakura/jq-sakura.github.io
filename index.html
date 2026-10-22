@@ -22,7 +22,7 @@
       href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Noto+Sans+SC:wght@400;500;700;800&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="styles.css?v=20260901-m" />
+    <link rel="stylesheet" href="styles.css?v=20261022-a" />
     <script>
       // Set before first paint so reveal animations never hide content when JS is off.
       document.documentElement.classList.add('js');
@@ -118,6 +118,9 @@
             </dl>
 
             <div class="profile-links">
+              <a href="#project-switch-control">robot-switch-control</a>
+              <a href="#project-camera-navigation">camera-guided-navigation</a>
+              <a href="#project-ai-showroom">ai-showroom-modeling</a>
               <a href="#project-rl-seg">rl-3d-segmentation</a>
               <a href="#project-pouring">transparent-pouring</a>
               <a href="#project-wellplate">sub-mm-insertion</a>
@@ -171,6 +174,54 @@
                   <span>selected work</span>
                 </div>
                 <div class="repo-grid">
+                  <article class="repo-card">
+                    <div class="repo-topline">
+                      <a class="repo-name" href="#project-switch-control">robot-switch-control</a>
+                      <span class="repo-flag">Manipulation</span>
+                    </div>
+                    <p class="repo-description">
+                      从开关实例分割、按压点识别与手眼标定，到机械臂按压、视觉复核和云端任务联调，
+                      完成楼宇开关灯任务的真机部署。
+                    </p>
+                    <ul class="repo-meta-list">
+                      <li>YOLO / RGB-D</li>
+                      <li>Hand-eye Calibration</li>
+                      <li>Jetson Orin</li>
+                    </ul>
+                  </article>
+
+                  <article class="repo-card">
+                    <div class="repo-topline">
+                      <a class="repo-name" href="#project-camera-navigation">camera-guided-navigation</a>
+                      <span class="repo-flag">Navigation</span>
+                    </div>
+                    <p class="repo-description">
+                      通过相机标定对齐画面与机器人坐标，在同一工程中支持画面选点导航和物体识别后导航到达，
+                      连接固定相机感知与移动机器人执行。
+                    </p>
+                    <ul class="repo-meta-list">
+                      <li>AprilTag</li>
+                      <li>Object Detection</li>
+                      <li>ROS2 / Navigation</li>
+                    </ul>
+                  </article>
+
+                  <article class="repo-card">
+                    <div class="repo-topline">
+                      <a class="repo-name" href="#project-ai-showroom">ai-showroom-modeling</a>
+                      <span class="repo-flag">3D / AI</span>
+                    </div>
+                    <p class="repo-description">
+                      使用 GPT-6 Astra 辅助 Blender 展厅场景建模与迭代，完成空间布局、材质灯光和相机漫游，
+                      输出可视化展示视频。
+                    </p>
+                    <ul class="repo-meta-list">
+                      <li>GPT-6 Astra</li>
+                      <li>Blender</li>
+                      <li>Scene Modeling</li>
+                    </ul>
+                  </article>
+
                   <article class="repo-card repo-card-featured">
                     <div class="repo-topline">
                       <a class="repo-name" href="#project-pouring">transparent-pouring</a>
@@ -316,12 +367,25 @@
                 </div>
                 <div class="timeline-body">
                   <ul>
-                    <li>负责机器人感知与任务操作相关算法研发。</li>
+                    <li>
+                      面向楼宇开关灯任务，完成开关感知、按压点识别、手眼标定与机械臂操作流程，
+                      部署至 Jetson Orin，并参与导航、视觉复核及云端任务回传联调。
+                    </li>
+                    <li>
+                      开发固定相机辅助的机器人视觉导航工程，完成 AprilTag 标定与坐标对齐，
+                      在同一工程中实现相机画面选点到达和识别目标物体后导航到达。
+                    </li>
+                    <li>
+                      探索 GPT-6 Astra 辅助 Blender 展厅场景建模，完成空间布局、材质灯光和漫游相机配置，
+                      产出展厅场景与 360° 漫游视频。
+                    </li>
                   </ul>
                   <div class="timeline-tags tag-row">
-                    <span>Grasping</span>
-                    <span>Perception</span>
+                    <span>RGB-D / YOLO</span>
+                    <span>AprilTag</span>
                     <span>Manipulation</span>
+                    <span>Jetson Orin</span>
+                    <span>Blender</span>
                   </div>
                 </div>
               </article>
@@ -491,8 +555,172 @@
             <div class="section-heading">
               <p class="eyebrow">Projects</p>
               <h2>项目经历</h2>
-              <p>精选机器人学习、3D 视觉与医学影像方向的项目，演示素材陆续补充。</p>
+              <p>精选机器人操作、视觉导航、3D 场景建模与机器人学习项目，结合真机演示和可视化成果展示。</p>
             </div>
+
+            <article class="project-card reveal" id="project-switch-control">
+              <div class="project-head">
+                <div class="project-title-row">
+                  <h3>机器人开关灯操作与任务联调</h3>
+                  <span class="repo-flag">Manipulation</span>
+                </div>
+                <p class="project-role">当前工作 · 2026.08 – 2026.10 · 真机开发与部署</p>
+              </div>
+              <div class="project-body">
+                <p class="project-lede">
+                  面向楼宇巡检中的开关灯任务，完成从视觉感知、手眼标定到机械臂按压的开发与车端部署，
+                  并参与串联导航到位、开关操作、视觉复核和结果回传的任务流程。
+                </p>
+                <ul class="project-list">
+                  <li>开发 SAM 辅助标注工具，迭代 YOLO 实例分割与按压关键点模型，识别开关实例及待按压端。</li>
+                  <li>打通 RGB-D 数据链路，完成手眼标定与相机到机械臂坐标转换，支持接近、按压、收回及视觉复核补按。</li>
+                  <li>在 Jetson Orin 上部署无头推理与常驻任务 worker，接入云端任务下发、导航调用和执行结果回告。</li>
+                  <li>完成单臂与车端验证，排查标定参数、初始姿态和任务状态问题，沉淀部署与现场排障说明。</li>
+                </ul>
+                <div class="metric-row">
+                  <span class="metric">真机按压验证</span>
+                  <span class="metric">Orin 车端部署</span>
+                  <span class="metric">云端任务联调</span>
+                </div>
+                <div class="tag-row">
+                  <span>YOLO-seg</span>
+                  <span>RGB-D</span>
+                  <span>Hand-eye Calibration</span>
+                  <span>Realman</span>
+                  <span>Jetson Orin</span>
+                </div>
+                <div class="media-grid">
+                  <figure class="vcarousel" data-carousel data-count="1" tabindex="0"
+                    role="group" aria-label="机械臂操作墙面开关演示">
+                    <div class="vcarousel-frame">
+                      <div class="vcarousel-slide is-active" data-label="选择目标按键后由机械臂执行按压">
+                        <video controls preload="none" playsinline muted loop
+                          poster="assets/images/posters/switch-control-01.jpg">
+                          <source data-src="assets/videos/switch-control-01.mp4" type="video/mp4" />
+                        </video>
+                      </div>
+                    </div>
+                    <figcaption class="vcarousel-foot">
+                      <span>机械臂开关操作 · 单臂阶段演示</span>
+                      <span class="vcarousel-label">选择目标按键后由机械臂执行按压</span>
+                    </figcaption>
+                  </figure>
+                </div>
+              </div>
+            </article>
+
+            <article class="project-card reveal" id="project-camera-navigation">
+              <div class="project-head">
+                <div class="project-title-row">
+                  <h3>相机辅助的机器人视觉导航</h3>
+                  <span class="repo-flag">Navigation</span>
+                </div>
+                <p class="project-role">当前工作 · 2026.10 · 画面选点与物体识别导航</p>
+              </div>
+              <div class="project-body">
+                <p class="project-lede">
+                  将固定相机画面中的目标转换为机器人可执行的空间位置，在同一视觉导航工程中，
+                  支持人工选点导航与识别目标物体后导航到达两种方式，完成从视频观测到机器人行动的连接。
+                </p>
+                <ul class="project-list">
+                  <li>完成双相机网关部署与视频接入，基于 AprilTag 标定对齐相机与机器人坐标。</li>
+                  <li>实现点击相机画面下发导航指令，并通过实测验证机器人到达选定点位附近。</li>
+                  <li>结合物体检测输出目标位置，控制机器人导航至物体附近，并根据后续机械臂操作需要调整到达姿态。</li>
+                  <li>打通网关侧感知、坐标转换与机器人导航任务下发，整理可复现的部署和操作工作流。</li>
+                </ul>
+                <div class="metric-row">
+                  <span class="metric">画面选点到达</span>
+                  <span class="metric">识别后导航到达</span>
+                  <span class="metric">真机实测</span>
+                </div>
+                <div class="tag-row">
+                  <span>AprilTag</span>
+                  <span>Camera Calibration</span>
+                  <span>Object Detection</span>
+                  <span>ROS2</span>
+                  <span>Navigation</span>
+                </div>
+                <div class="media-grid">
+                  <figure class="vcarousel" data-carousel data-count="2" tabindex="0"
+                    role="group" aria-label="相机辅助视觉导航，共 2 段视频">
+                    <div class="vcarousel-frame">
+                      <button class="vcarousel-nav vcarousel-prev" type="button" aria-label="上一段视频">‹</button>
+                      <button class="vcarousel-nav vcarousel-next" type="button" aria-label="下一段视频">›</button>
+                      <span class="vcarousel-counter" aria-hidden="true">1 / 2</span>
+                      <div class="vcarousel-slide is-active" data-label="相机画面选点导航 · 原速节选">
+                        <video controls preload="none" playsinline muted loop
+                          poster="assets/images/posters/camera-navigation-01.jpg">
+                          <source data-src="assets/videos/camera-navigation-01.mp4" type="video/mp4" />
+                        </video>
+                      </div>
+                      <div class="vcarousel-slide" data-label="物体识别后导航到达 · 到达过程节选">
+                        <video controls preload="none" playsinline muted loop
+                          poster="assets/images/posters/camera-navigation-02.jpg">
+                          <source data-src="assets/videos/camera-navigation-02.mp4" type="video/mp4" />
+                        </video>
+                      </div>
+                    </div>
+                    <figcaption class="vcarousel-foot">
+                      <span>同一视觉导航工程的两种方式</span>
+                      <span class="vcarousel-label">相机画面选点导航 · 原速节选</span>
+                      <span class="vcarousel-dots">
+                        <button class="vcarousel-dot is-active" type="button" aria-label="切换到 相机画面选点导航"></button>
+                        <button class="vcarousel-dot" type="button" aria-label="切换到 物体识别后导航到达"></button>
+                      </span>
+                    </figcaption>
+                  </figure>
+                </div>
+              </div>
+            </article>
+
+            <article class="project-card reveal" id="project-ai-showroom">
+              <div class="project-head">
+                <div class="project-title-row">
+                  <h3>GPT-6 Astra 辅助展厅场景建模</h3>
+                  <span class="repo-flag">3D / AI</span>
+                </div>
+                <p class="project-role">当前工作 · 2026.09 · Blender 场景建模探索</p>
+              </div>
+              <div class="project-body">
+                <p class="project-lede">
+                  探索大语言模型辅助 3D 内容制作，使用 GPT-6 Astra 结合 Blender 完成展厅场景建模与迭代，
+                  将场景构想转化为可展示的空间布局和 360° 漫游视频。
+                </p>
+                <ul class="project-list">
+                  <li>通过场景描述与参考材料组织展厅布局，使用 GPT-6 Astra 辅助创建和调整 Blender 场景。</li>
+                  <li>完成空间结构、家具与展示区域的建模，迭代材质、灯光和镜头构图。</li>
+                  <li>配置环绕相机并渲染场景漫游，产出可用于方案沟通和效果展示的 3D 可视化视频。</li>
+                </ul>
+                <div class="metric-row">
+                  <span class="metric">展厅场景建模</span>
+                  <span class="metric">360° 漫游</span>
+                  <span class="metric">AI 辅助迭代</span>
+                </div>
+                <div class="tag-row">
+                  <span>GPT-6 Astra</span>
+                  <span>Blender</span>
+                  <span>3D Modeling</span>
+                  <span>Rendering</span>
+                </div>
+                <div class="media-grid">
+                  <figure class="vcarousel" data-carousel data-count="1" tabindex="0"
+                    role="group" aria-label="GPT-6 Astra 辅助建模的展厅场景漫游">
+                    <div class="vcarousel-frame">
+                      <div class="vcarousel-slide is-active" data-label="展厅场景 360° 漫游">
+                        <video controls preload="none" playsinline muted loop
+                          poster="assets/images/posters/ai-showroom-01.jpg">
+                          <source data-src="assets/videos/ai-showroom-01.mp4" type="video/mp4" />
+                        </video>
+                      </div>
+                    </div>
+                    <figcaption class="vcarousel-foot">
+                      <span>GPT-6 Astra + Blender</span>
+                      <span class="vcarousel-label">展厅场景 360° 漫游</span>
+                    </figcaption>
+                  </figure>
+                </div>
+              </div>
+            </article>
 
             <article class="project-card reveal" id="project-pouring">
               <div class="project-head">
@@ -1314,6 +1542,6 @@
       </footer>
     </div>
 
-    <script src="script.js?v=20260901-m"></script>
+    <script src="script.js?v=20261022-a"></script>
   </body>
 </html>

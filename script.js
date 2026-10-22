@@ -1,7 +1,9 @@
 (() => {
   'use strict';
 
-  const HEADER_OFFSET = 80;
+  const siteHeader = document.querySelector('.site-header');
+  // The navigation wraps on mobile, so anchor targets must clear its actual height.
+  const headerOffset = () => Math.ceil(siteHeader.getBoundingClientRect().height) + 8;
 
   // ============ reveal on scroll ============
   // threshold must stay 0: several .reveal elements (the sticky sidebar, long
@@ -33,7 +35,7 @@
 
   const syncNav = () => {
     ticking = false;
-    const line = HEADER_OFFSET + 12;
+    const line = headerOffset() + 12;
     let current = sections[0];
 
     for (const section of sections) {
@@ -65,7 +67,7 @@
   const scrollToId = (id) => {
     const target = document.getElementById(id);
     if (!target) return false;
-    const top = target.getBoundingClientRect().top + window.scrollY - HEADER_OFFSET;
+    const top = target.getBoundingClientRect().top + window.scrollY - headerOffset();
     window.scrollTo({ top: Math.max(top, 0), behavior: 'smooth' });
     return true;
   };
