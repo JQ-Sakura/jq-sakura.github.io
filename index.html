@@ -590,19 +590,32 @@
                   <span>Jetson Orin</span>
                 </div>
                 <div class="media-grid">
-                  <figure class="vcarousel" data-carousel data-count="1" tabindex="0"
-                    role="group" aria-label="机械臂操作墙面开关演示">
+                  <figure class="vcarousel" data-carousel data-count="2" tabindex="0"
+                    role="group" aria-label="机器人开关灯操作，共 2 段视频">
                     <div class="vcarousel-frame">
+                      <button class="vcarousel-nav vcarousel-prev" type="button" aria-label="上一段视频">‹</button>
+                      <button class="vcarousel-nav vcarousel-next" type="button" aria-label="下一段视频">›</button>
+                      <span class="vcarousel-counter" aria-hidden="true">1 / 2</span>
                       <div class="vcarousel-slide is-active" data-label="选择目标按键后由机械臂执行按压">
                         <video controls preload="none" playsinline muted loop
                           poster="assets/images/posters/switch-control-01.jpg">
                           <source data-src="assets/videos/switch-control-01.mp4" type="video/mp4" />
                         </video>
                       </div>
+                      <div class="vcarousel-slide" data-label="小车导航与开关灯任务 · 现场联调">
+                        <video controls preload="none" playsinline muted loop
+                          poster="assets/images/posters/switch-control-02.jpg">
+                          <source data-src="assets/videos/switch-control-02.mp4" type="video/mp4" />
+                        </video>
+                      </div>
                     </div>
                     <figcaption class="vcarousel-foot">
-                      <span>机械臂开关操作 · 单臂阶段演示</span>
+                      <span>机器人开关灯 · 真机演示</span>
                       <span class="vcarousel-label">选择目标按键后由机械臂执行按压</span>
+                      <span class="vcarousel-dots">
+                        <button class="vcarousel-dot is-active" type="button" aria-label="切换到 单臂开关按压演示"></button>
+                        <button class="vcarousel-dot" type="button" aria-label="切换到 小车导航与开关灯现场联调"></button>
+                      </span>
                     </figcaption>
                   </figure>
                 </div>
