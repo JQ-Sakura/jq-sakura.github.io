@@ -1153,6 +1153,17 @@ ul {
   grid-template-columns: repeat(auto-fit, minmax(min(376px, 100%), 1fr));
 }
 
+/* Independent demos stay visible together; proportional columns give the
+   square and portrait switch footage the same height without adding bars. */
+.media-grid.video-gallery {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-items: start;
+}
+
+.media-grid.video-gallery--switch {
+  grid-template-columns: minmax(0, 720fr) minmax(0, 406fr);
+}
+
 .vcarousel {
   margin: 0;
   display: grid;
@@ -1161,7 +1172,7 @@ ul {
 
 .vcarousel-frame {
   position: relative;
-  aspect-ratio: 71 / 40; /* matches the 568x320 source footage */
+  aspect-ratio: var(--video-aspect, 71 / 40);
   border-radius: var(--radius-md);
   overflow: hidden;
   background: var(--bg-muted);
@@ -1173,6 +1184,10 @@ ul {
   height: 100%;
   object-fit: contain;
   background: #000;
+}
+
+.vcarousel-slide {
+  height: 100%;
 }
 
 /* only the active slide is displayed; the rest stay in the DOM unloaded */
@@ -1607,6 +1622,7 @@ ul {
   .timeline-item {
     padding-left: 1.35rem;
   }
+  .media-grid.video-gallery,
   .repo-grid,
   .highlight-grid,
   .media-grid {

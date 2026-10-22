@@ -22,7 +22,7 @@
       href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Noto+Sans+SC:wght@400;500;700;800&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="styles.css?v=20261022-map" />
+    <link rel="stylesheet" href="styles.css?v=20261022-video-fit" />
     <script>
       // Set before first paint so reveal animations never hide content when JS is off.
       document.documentElement.classList.add('js');
@@ -589,33 +589,36 @@
                   <span>Realman</span>
                   <span>Jetson Orin</span>
                 </div>
-                <div class="media-grid">
-                  <figure class="vcarousel" data-carousel data-count="2" tabindex="0"
-                    role="group" aria-label="机器人开关灯操作，共 2 段视频">
-                    <div class="vcarousel-frame">
-                      <button class="vcarousel-nav vcarousel-prev" type="button" aria-label="上一段视频">‹</button>
-                      <button class="vcarousel-nav vcarousel-next" type="button" aria-label="下一段视频">›</button>
-                      <span class="vcarousel-counter" aria-hidden="true">1 / 2</span>
+                <div class="media-grid video-gallery video-gallery--switch">
+                  <figure class="vcarousel" data-carousel data-count="1"
+                    role="group" aria-label="单臂开关按压">
+                    <div class="vcarousel-frame" style="--video-aspect: 1">
                       <div class="vcarousel-slide is-active" data-label="选择目标按键后由机械臂执行按压">
                         <video controls preload="none" playsinline muted loop
-                          poster="assets/images/posters/switch-control-01.jpg">
-                          <source data-src="assets/videos/switch-control-01.mp4" type="video/mp4" />
-                        </video>
-                      </div>
-                      <div class="vcarousel-slide" data-label="小车导航与开关灯任务 · 现场联调">
-                        <video controls preload="none" playsinline muted loop
-                          poster="assets/images/posters/switch-control-02.jpg">
-                          <source data-src="assets/videos/switch-control-02.mp4" type="video/mp4" />
+                          poster="assets/images/posters/switch-control-01.jpg?v=20261022-natural">
+                          <source data-src="assets/videos/switch-control-01.mp4?v=20261022-natural" type="video/mp4" />
                         </video>
                       </div>
                     </div>
                     <figcaption class="vcarousel-foot">
-                      <span>机器人开关灯 · 真机演示</span>
+                      <span>单臂开关按压</span>
                       <span class="vcarousel-label">选择目标按键后由机械臂执行按压</span>
-                      <span class="vcarousel-dots">
-                        <button class="vcarousel-dot is-active" type="button" aria-label="切换到 单臂开关按压演示"></button>
-                        <button class="vcarousel-dot" type="button" aria-label="切换到 小车导航与开关灯现场联调"></button>
-                      </span>
+                    </figcaption>
+                  </figure>
+
+                  <figure class="vcarousel" data-carousel data-count="1"
+                    role="group" aria-label="导航与开关灯">
+                    <div class="vcarousel-frame" style="--video-aspect: 406 / 720">
+                      <div class="vcarousel-slide is-active" data-label="小车导航与开关灯任务 · 现场联调">
+                        <video controls preload="none" playsinline muted loop
+                          poster="assets/images/posters/switch-control-02.jpg?v=20261022-natural">
+                          <source data-src="assets/videos/switch-control-02.mp4?v=20261022-natural" type="video/mp4" />
+                        </video>
+                      </div>
+                    </div>
+                    <figcaption class="vcarousel-foot">
+                      <span>导航与开关灯</span>
+                      <span class="vcarousel-label">小车导航与开关灯任务 · 现场联调</span>
                     </figcaption>
                   </figure>
                 </div>
@@ -653,33 +656,36 @@
                   <span>ROS2</span>
                   <span>Navigation</span>
                 </div>
-                <div class="media-grid">
-                  <figure class="vcarousel" data-carousel data-count="2" tabindex="0"
-                    role="group" aria-label="相机辅助视觉导航，共 2 段视频">
-                    <div class="vcarousel-frame">
-                      <button class="vcarousel-nav vcarousel-prev" type="button" aria-label="上一段视频">‹</button>
-                      <button class="vcarousel-nav vcarousel-next" type="button" aria-label="下一段视频">›</button>
-                      <span class="vcarousel-counter" aria-hidden="true">1 / 2</span>
-                      <div class="vcarousel-slide is-active" data-label="相机画面选点导航 · 原速节选">
+                <div class="media-grid video-gallery video-gallery--navigation">
+                  <figure class="vcarousel" data-carousel data-count="1"
+                    role="group" aria-label="相机画面选点导航">
+                    <div class="vcarousel-frame" style="--video-aspect: 1174 / 670">
+                      <div class="vcarousel-slide is-active" data-label="画面选点导航 · 原速节选">
                         <video controls preload="none" playsinline muted loop
-                          poster="assets/images/posters/camera-navigation-01.jpg">
-                          <source data-src="assets/videos/camera-navigation-01.mp4" type="video/mp4" />
-                        </video>
-                      </div>
-                      <div class="vcarousel-slide" data-label="物体识别后导航到达 · 到达过程节选">
-                        <video controls preload="none" playsinline muted loop
-                          poster="assets/images/posters/camera-navigation-02.jpg">
-                          <source data-src="assets/videos/camera-navigation-02.mp4" type="video/mp4" />
+                          poster="assets/images/posters/camera-navigation-01.jpg?v=20261022-natural">
+                          <source data-src="assets/videos/camera-navigation-01.mp4?v=20261022-natural" type="video/mp4" />
                         </video>
                       </div>
                     </div>
                     <figcaption class="vcarousel-foot">
-                      <span>同一视觉导航工程的两种方式</span>
-                      <span class="vcarousel-label">相机画面选点导航 · 原速节选</span>
-                      <span class="vcarousel-dots">
-                        <button class="vcarousel-dot is-active" type="button" aria-label="切换到 相机画面选点导航"></button>
-                        <button class="vcarousel-dot" type="button" aria-label="切换到 物体识别后导航到达"></button>
-                      </span>
+                      <span>相机画面选点导航</span>
+                      <span class="vcarousel-label">画面选点导航 · 原速节选</span>
+                    </figcaption>
+                  </figure>
+
+                  <figure class="vcarousel" data-carousel data-count="1"
+                    role="group" aria-label="物体识别后导航">
+                    <div class="vcarousel-frame" style="--video-aspect: 16 / 9">
+                      <div class="vcarousel-slide is-active" data-label="识别目标后导航到达 · 到达过程节选">
+                        <video controls preload="none" playsinline muted loop
+                          poster="assets/images/posters/camera-navigation-02.jpg?v=20261022-natural">
+                          <source data-src="assets/videos/camera-navigation-02.mp4?v=20261022-natural" type="video/mp4" />
+                        </video>
+                      </div>
+                    </div>
+                    <figcaption class="vcarousel-foot">
+                      <span>物体识别后导航</span>
+                      <span class="vcarousel-label">识别目标后导航到达 · 到达过程节选</span>
                     </figcaption>
                   </figure>
                 </div>
