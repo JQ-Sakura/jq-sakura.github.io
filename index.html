@@ -19,14 +19,10 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Noto+Sans+SC:wght@400;500;700;800&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,300..900&family=Noto+Sans+SC:wght@400;500;700;900&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="styles.css?v=20261022-video-fit" />
-    <script>
-      // Set before first paint so reveal animations never hide content when JS is off.
-      document.documentElement.classList.add('js');
-    </script>
+    <link rel="stylesheet" href="styles.css?v=20261118-bench" />
   </head>
   <body>
     <a class="skip-link" href="#overview">跳到主要内容</a>
@@ -34,320 +30,175 @@
     <div class="page-shell">
       <header class="site-header">
         <a class="brand" href="#overview">
-          <span class="brand-text">
-            <strong>杨骏青 Junqing Yang</strong>
-            <span>robotics &amp; embodied ai</span>
-          </span>
+          <strong>杨骏青</strong>
+          <span>Junqing Yang</span>
         </a>
         <nav class="site-nav" aria-label="页面导航">
-          <a href="#overview" data-nav-link>Overview</a>
-          <a href="#experience" data-nav-link>Experience</a>
-          <a href="#projects" data-nav-link>Projects</a>
-          <a href="#publications" data-nav-link>Publications</a>
-          <a href="#stack" data-nav-link>Stack</a>
+          <a href="#overview" data-nav-link>概览</a>
+          <a href="#experience" data-nav-link>经历</a>
+          <a href="#projects" data-nav-link>项目</a>
+          <a href="#publications" data-nav-link>论文</a>
+          <a href="#stack" data-nav-link>技术栈</a>
         </nav>
       </header>
 
-      <main class="profile-home">
-        <aside class="profile-sidebar reveal">
-          <section class="profile-card">
-            <img
-              class="profile-avatar"
-              src="assets/images/profile.png"
-              alt="杨骏青的照片"
-              width="512"
-              height="512"
-              loading="eager"
-              decoding="async"
-            />
-
-            <h2>杨骏青</h2>
-            <p class="profile-role">Robot Vision / Model Development Engineer · Robot Model &amp; Application Development Team Lead</p>
-            <p class="profile-motto">“NEVER KNOWS BEST”</p>
-
-            <p class="profile-summary">
-              伦敦大学学院（UCL）机器人与人工智能硕士，从事机器人视觉/模型开发，并担任机器人模型/应用开发组组长。
-              具备机器人学习、3D 视觉、多模态感知、模仿学习、策略学习与真实机器人部署的端到端研发经验，
-              关注数据闭环、模型泛化与真机部署稳定性。
-            </p>
-
-            <dl class="profile-meta">
-              <div>
-                <dt>Robot Learning</dt>
-                <dd>模仿学习、策略学习、ACT / DiffusionPolicy / FlowMatching / VLA / WAM</dd>
-              </div>
-              <div>
-                <dt>Perception</dt>
-                <dd>3D 视觉、点云与 RGB-D 融合、位姿估计、多模态感知</dd>
-              </div>
-              <div>
-                <dt>Manipulation</dt>
-                <dd>精细操作、亚毫米级装配、灵巧手操作、真机部署与调试</dd>
-              </div>
-              <div>
-                <dt>Data Pipeline</dt>
-                <dd>多源数据采集、自动化质检、训练数据构建与版本管理</dd>
-              </div>
-              <div>
-                <dt>Collaboration</dt>
-                <dd>欢迎研究合作与开源项目交流</dd>
-              </div>
-            </dl>
-
-            <dl class="profile-contact">
-              <div>
-                <dt class="contact-key">Email</dt>
-                <dd><a class="accent" href="mailto:yjunqing12@163.com">yjunqing12@163.com</a></dd>
-              </div>
-              <div>
-                <dt class="contact-key">GitHub</dt>
-                <dd><a class="accent" href="https://github.com/JQ-Sakura" rel="me">JQ-Sakura</a></dd>
-              </div>
-              <div>
-                <dt class="contact-key">LinkedIn</dt>
-                <dd>
-                  <a class="accent" href="https://www.linkedin.com/in/junqing-yang-381b73245">
-                    junqing-yang
-                  </a>
-                </dd>
-              </div>
-              <div>
-                <dt class="contact-key">Based in</dt>
-                <dd>上海，中国</dd>
-              </div>
-            </dl>
-
-            <div class="profile-links">
-              <a href="#project-switch-control">robot-switch-control</a>
-              <a href="#project-camera-navigation">camera-guided-navigation</a>
-              <a href="#project-ai-showroom">ai-showroom-modeling</a>
-              <a href="#project-rl-seg">rl-3d-segmentation</a>
-              <a href="#project-pouring">transparent-pouring</a>
-              <a href="#project-wellplate">sub-mm-insertion</a>
-              <a href="#project-isaaclab">isaaclab-sim</a>
-              <a href="#project-slam">orb-slam2-eval</a>
-              <a href="#project-ros-grasp">ros-grasping</a>
-              <a href="#project-binpacking">drl-bin-packing</a>
-            </div>
-          </section>
-        </aside>
-
-        <div class="content-column">
-          <!-- ============ OVERVIEW ============ -->
-          <section class="section reveal" data-section id="overview">
-            <div class="section-heading">
-              <p class="eyebrow">Overview</p>
-              <h1>机器人学习与真机部署</h1>
-              <p>
-                从数据采集到策略上机的完整链路：多源遥操作采集、自动化质检、策略训练评测，
+      <main>
+        <!-- ============ OVERVIEW ============ -->
+        <section class="overview" data-section id="overview">
+          <div class="hero wrap">
+            <div class="hero-main">
+              <h1 class="hero-name">
+                <span class="name-zh">杨骏青</span>
+                <span class="name-en">Junqing Yang</span>
+              </h1>
+              <p class="hero-role">机器人视觉 / 模型开发工程师，机器人模型 / 应用开发组组长</p>
+              <p class="hero-lede">
+                做机器人学习与真机部署，覆盖从数据采集到策略上机的完整链路：多源遥操作采集、自动化质检、策略训练评测，
                 再到真实机器人上的高精度、低延迟执行。
               </p>
+              <p class="hero-summary">
+                伦敦大学学院（UCL）机器人与人工智能硕士。具备机器人学习、3D 视觉、多模态感知、模仿学习、
+                策略学习与真实机器人部署的端到端研发经验，关注数据闭环、模型泛化与真机部署稳定性。
+              </p>
+              <ul class="hero-contact">
+                <li><a href="mailto:yjunqing12@163.com">yjunqing12@163.com</a></li>
+                <li><a href="https://github.com/JQ-Sakura" rel="me">GitHub</a></li>
+                <li><a href="https://www.linkedin.com/in/junqing-yang-381b73245">LinkedIn</a></li>
+              </ul>
             </div>
 
-            <div class="highlight-grid">
-              <article class="highlight-card">
-                <p class="highlight-label">透明容器倒水（真机）</p>
-                <p class="highlight-value">98<span>%+</span></p>
-                <p>纯感知方案，双臂循环跑测基本无失败</p>
-              </article>
-              <article class="highlight-card">
-                <p class="highlight-label">多材质容器抓取</p>
-                <p class="highlight-value">99<span>%+</span></p>
-                <p>透明、反光材质与光照变化下的泛化</p>
-              </article>
-              <article class="highlight-card">
-                <p class="highlight-label">亚毫米级孔板抓放</p>
-                <p class="highlight-value">95<span>%+</span></p>
-                <p>基于 FlowMatching 的长程精细装配</p>
-              </article>
-              <article class="highlight-card">
-                <p class="highlight-label">已发表论文</p>
-                <p class="highlight-value">6<span> 篇</span></p>
-                <p>其中 4 篇第一作者</p>
-              </article>
-            </div>
-
-            <div class="overview-grid">
-              <section class="overview-panel" id="project-map">
-                <div class="panel-head">
-                  <h2>Project Map</h2>
-                  <span>selected work</span>
+            <aside class="hero-side">
+              <img
+                class="hero-photo"
+                src="assets/images/profile.png"
+                alt="杨骏青的照片"
+                width="512"
+                height="512"
+                loading="eager"
+                decoding="async"
+              />
+              <dl class="hero-facts">
+                <div>
+                  <dt>所在地</dt>
+                  <dd>上海，中国</dd>
                 </div>
-                <div class="repo-grid">
-                  <article class="repo-card">
-                    <div class="repo-topline">
-                      <a class="repo-name" href="#project-switch-control">robot-switch-control</a>
-                      <span class="repo-flag">Manipulation</span>
-                    </div>
-                    <p class="repo-description">
-                      从开关实例分割、按压点识别与手眼标定，到机械臂按压、视觉复核和云端任务联调，
-                      完成楼宇开关灯任务的真机部署。
-                    </p>
-                    <ul class="repo-meta-list">
-                      <li>YOLO / RGB-D</li>
-                      <li>Hand-eye Calibration</li>
-                      <li>Jetson Orin</li>
-                    </ul>
-                  </article>
-
-                  <article class="repo-card">
-                    <div class="repo-topline">
-                      <a class="repo-name" href="#project-camera-navigation">camera-guided-navigation</a>
-                      <span class="repo-flag">Navigation</span>
-                    </div>
-                    <p class="repo-description">
-                      通过相机标定对齐画面与机器人坐标，在同一工程中支持画面选点导航和物体识别后导航到达，
-                      连接固定相机感知与移动机器人执行。
-                    </p>
-                    <ul class="repo-meta-list">
-                      <li>AprilTag</li>
-                      <li>Object Detection</li>
-                      <li>ROS2 / Navigation</li>
-                    </ul>
-                  </article>
-
-                  <article class="repo-card">
-                    <div class="repo-topline">
-                      <a class="repo-name" href="#project-ai-showroom">ai-showroom-modeling</a>
-                      <span class="repo-flag">3D / AI</span>
-                    </div>
-                    <p class="repo-description">
-                      使用 GPT-6 Astra 辅助 Blender 展厅场景建模与迭代，完成空间布局、材质灯光和相机漫游，
-                      输出可视化展示视频。
-                    </p>
-                    <ul class="repo-meta-list">
-                      <li>GPT-6 Astra</li>
-                      <li>Blender</li>
-                      <li>Scene Modeling</li>
-                    </ul>
-                  </article>
-
-                  <article class="repo-card">
-                    <div class="repo-topline">
-                      <a class="repo-name" href="#project-pouring">transparent-pouring</a>
-                      <span class="repo-flag">Manipulation</span>
-                    </div>
-                    <p class="repo-description">
-                      基于 RGB-D 与点云融合的纯感知方案，完成透明容器分割、位姿估计、瓶口与抓取点预测，
-                      支撑双臂循环倒水任务。
-                    </p>
-                    <ul class="repo-meta-list">
-                      <li>FoundationStereo</li>
-                      <li>FoundationPose</li>
-                      <li>PointTransformerV3</li>
-                    </ul>
-                  </article>
-
-                  <article class="repo-card">
-                    <div class="repo-topline">
-                      <a class="repo-name" href="#project-wellplate">sub-mm-insertion</a>
-                      <span class="repo-flag">Policy</span>
-                    </div>
-                    <p class="repo-description">
-                      孔板抓放至孔槽的亚毫米级精度任务，系统对比多类策略模型并优化插入阶段控制。
-                    </p>
-                    <ul class="repo-meta-list">
-                      <li>FlowMatching</li>
-                      <li>DiffusionPolicy</li>
-                      <li>ACT / VLA</li>
-                    </ul>
-                  </article>
-
-                  <article class="repo-card">
-                    <div class="repo-topline">
-                      <a class="repo-name" href="#project-rl-seg">rl-3d-segmentation</a>
-                      <span class="repo-flag">Research</span>
-                    </div>
-                    <p class="repo-description">
-                      可提示区域探索用于前列腺癌分割，硕士毕业设计，已发表于 IJCARS。
-                    </p>
-                    <ul class="repo-meta-list">
-                      <li>PPO</li>
-                      <li>Actor-Critic</li>
-                      <li>DDP</li>
-                    </ul>
-                  </article>
-
-                  <article class="repo-card">
-                    <div class="repo-topline">
-                      <a class="repo-name" href="#project-datapipeline">robot-data-pipeline</a>
-                      <span class="repo-flag">Infra</span>
-                    </div>
-                    <p class="repo-description">
-                      多源机器人数据采集与质检管线，覆盖 MOCAP、3D 鼠标、VR 遥操作、拖动示教与 UMI。
-                    </p>
-                    <ul class="repo-meta-list">
-                      <li>LeRobot / DexData</li>
-                      <li>自动化 QC</li>
-                      <li>rerun</li>
-                    </ul>
-                  </article>
-
-                  <article class="repo-card">
-                    <div class="repo-topline">
-                      <a class="repo-name" href="#project-isaaclab">isaaclab-sim</a>
-                      <span class="repo-flag">Sim</span>
-                    </div>
-                    <p class="repo-description">
-                      基于 NVIDIA IsaacLab 的多机器人仿真环境，训练 PPO 策略并评估 sim-to-real 可迁移性。
-                    </p>
-                    <ul class="repo-meta-list">
-                      <li>IsaacLab</li>
-                      <li>VecEnv</li>
-                      <li>USD</li>
-                    </ul>
-                  </article>
-
-                  <article class="repo-card">
-                    <div class="repo-topline">
-                      <a class="repo-name" href="#project-slam">orb-slam2-eval</a>
-                      <span class="repo-flag">SLAM</span>
-                    </div>
-                    <p class="repo-description">
-                      在 TUM、KITTI 与自录视频上做消融式评估，室内轨迹精度 &lt;0.11m RMSE。
-                    </p>
-                    <ul class="repo-meta-list">
-                      <li>COLMAP</li>
-                      <li>EVO / APE</li>
-                      <li>C++</li>
-                    </ul>
-                  </article>
+                <div>
+                  <dt>学历</dt>
+                  <dd>UCL 硕士，一等荣誉学位</dd>
                 </div>
-              </section>
-            </div>
+                <div>
+                  <dt>论文</dt>
+                  <dd>已发表 6 篇，其中 4 篇第一作者</dd>
+                </div>
+                <div>
+                  <dt>合作</dt>
+                  <dd>欢迎研究合作与开源项目交流</dd>
+                </div>
+              </dl>
+            </aside>
+          </div>
 
-            <div class="section-heading" style="margin-top: 2.4rem">
-              <p class="eyebrow">Education</p>
+          <!-- 实验台：每个数字都配一段真机录像 -->
+          <div class="bench">
+            <div class="wrap">
+              <h2 class="bench-title">真机成功率</h2>
+              <ul class="bench-grid">
+                <li class="bench-item">
+                  <div class="bench-clip">
+                    <video muted loop playsinline preload="none" data-autoplay
+                      poster="assets/images/posters/pouring-01.jpg"
+                      aria-label="双臂机器人循环倒水的真机录像">
+                      <source data-src="assets/videos/pouring-01.mp4" type="video/mp4" />
+                    </video>
+                    <button class="bench-toggle" type="button" aria-label="暂停视频" hidden></button>
+                  </div>
+                  <p class="bench-value">98<span>%+</span></p>
+                  <p class="bench-label">透明容器倒水</p>
+                  <p class="bench-note">纯感知方案，双臂循环跑测基本无失败</p>
+                  <a class="bench-link" href="#project-pouring">查看倒水项目</a>
+                </li>
+                <li class="bench-item">
+                  <div class="bench-clip">
+                    <video muted loop playsinline preload="none" data-autoplay
+                      poster="assets/images/posters/insert-01.jpg"
+                      aria-label="孔板插入孔槽的真机录像">
+                      <source data-src="assets/videos/insert-01.mp4" type="video/mp4" />
+                    </video>
+                    <button class="bench-toggle" type="button" aria-label="暂停视频" hidden></button>
+                  </div>
+                  <p class="bench-value">95<span>%+</span></p>
+                  <p class="bench-label">亚毫米级孔板抓放</p>
+                  <p class="bench-note">基于 FlowMatching 的长程精细装配</p>
+                  <a class="bench-link" href="#project-wellplate">查看孔板项目</a>
+                </li>
+                <li class="bench-item">
+                  <div class="bench-clip">
+                    <video muted loop playsinline preload="none" data-autoplay
+                      poster="assets/images/posters/grasp-01.jpg"
+                      aria-label="机器人抓取孔板的真机录像">
+                      <source data-src="assets/videos/grasp-01.mp4" type="video/mp4" />
+                    </video>
+                    <button class="bench-toggle" type="button" aria-label="暂停视频" hidden></button>
+                  </div>
+                  <p class="bench-value">99<span>%+</span></p>
+                  <p class="bench-label">多材质容器抓取</p>
+                  <p class="bench-note">透明、反光材质与光照变化下的泛化</p>
+                  <a class="bench-link" href="#project-pouring">查看抓取方案</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="wrap">
+            <div class="section-heading">
+              <h2>研究方向</h2>
+            </div>
+            <dl class="ledger focus-list">
+              <div class="row">
+                <dt>机器人学习</dt>
+                <dd>模仿学习、策略学习、ACT / DiffusionPolicy / FlowMatching / VLA / WAM</dd>
+              </div>
+              <div class="row">
+                <dt>感知</dt>
+                <dd>3D 视觉、点云与 RGB-D 融合、位姿估计、多模态感知</dd>
+              </div>
+              <div class="row">
+                <dt>操作</dt>
+                <dd>精细操作、亚毫米级装配、灵巧手操作、真机部署与调试</dd>
+              </div>
+              <div class="row">
+                <dt>数据管线</dt>
+                <dd>多源数据采集、自动化质检、训练数据构建与版本管理</dd>
+              </div>
+            </dl>
+
+            <div class="section-heading">
               <h2>教育经历</h2>
             </div>
-
-            <div class="edu-grid">
-              <article class="edu-card">
-                <p class="edu-school">伦敦大学学院 University College London</p>
-                <p class="edu-degree">硕士 · 医学机器人与人工智能</p>
-                <p class="edu-line">
-                  <span>2024.09 – 2025.09</span>
-                  <span class="place">伦敦，英国</span>
-                </p>
-                <p class="edu-honor">一等荣誉学位 First-class Honours</p>
+            <div class="ledger">
+              <article class="row edu">
+                <p class="row-key">2024.09 – 2025.09</p>
+                <div>
+                  <p class="edu-school">伦敦大学学院 University College London</p>
+                  <p class="edu-degree">硕士，医学机器人与人工智能 · 伦敦，英国</p>
+                  <p class="edu-honor">一等荣誉学位 First-class Honours</p>
+                </div>
               </article>
-
-              <article class="edu-card">
-                <p class="edu-school">西交利物浦大学 Xi'an Jiaotong-Liverpool University</p>
-                <p class="edu-degree">学士 · 智能机器人工程</p>
-                <p class="edu-line">
-                  <span>2020.09 – 2024.09</span>
-                  <span class="place">苏州，中国</span>
-                </p>
-                <p class="edu-honor">一等荣誉学位 · GPA 前 5%</p>
+              <article class="row edu">
+                <p class="row-key">2020.09 – 2024.09</p>
+                <div>
+                  <p class="edu-school">西交利物浦大学 Xi'an Jiaotong-Liverpool University</p>
+                  <p class="edu-degree">学士，智能机器人工程 · 苏州，中国</p>
+                  <p class="edu-honor">一等荣誉学位，GPA 前 5%</p>
+                </div>
               </article>
             </div>
-          </section>
+          </div>
+        </section>
 
           <!-- ============ EXPERIENCE ============ -->
-          <section class="section reveal" data-section id="experience">
+          <section class="section wrap" data-section id="experience">
             <div class="section-heading">
-              <p class="eyebrow">Experience</p>
               <h2>工作经历</h2>
               <p>从嵌入式与机器视觉起步，逐步转向机器人学习与真实机器人系统的端到端研发。</p>
             </div>
@@ -551,14 +402,29 @@
           </section>
 
           <!-- ============ PROJECTS ============ -->
-          <section class="section reveal" data-section id="projects">
+          <section class="section wrap" data-section id="projects">
             <div class="section-heading">
-              <p class="eyebrow">Projects</p>
               <h2>项目经历</h2>
               <p>精选机器人操作、视觉导航、3D 场景建模与机器人学习项目，结合真机演示和可视化成果展示。</p>
             </div>
 
-            <article class="project-card reveal" id="project-switch-control">
+            <nav class="project-index" aria-label="项目目录">
+              <a href="#project-switch-control"><span>机器人开关灯操作与任务联调</span><small>2026</small></a>
+              <a href="#project-camera-navigation"><span>相机辅助的机器人视觉导航</span><small>2026</small></a>
+              <a href="#project-ai-showroom"><span>GPT-6 Astra 辅助展厅场景建模</span><small>2026</small></a>
+              <a href="#project-pouring"><span>透明容器抓取与双臂倒水</span><small>2025 – 26</small></a>
+              <a href="#project-wellplate"><span>亚毫米级孔板抓放与灵巧手移液</span><small>2025 – 26</small></a>
+              <a href="#project-datapipeline"><span>多源机器人数据采集与质检管线</span><small>2025 – 26</small></a>
+              <a href="#project-rl-seg"><span>可提示区域探索的前列腺癌分割</span><small>2024 – 25</small></a>
+              <a href="#project-isaaclab"><span>NVIDIA IsaacLab 仿真实践</span><small>2025</small></a>
+              <a href="#project-slam"><span>ORB-SLAM2 性能评估与实景测试</span><small>2025</small></a>
+              <a href="#project-ros-grasp"><span>基于 ROS 的物体检测与抓取放置系统</span><small>2025</small></a>
+              <a href="#project-binpacking"><span>DRL 与 3D 视觉的在线箱体打包</span><small>2023 – 24</small></a>
+              <a href="#project-medical"><span>医学影像与信号处理项目集</span><small>2022 – 25</small></a>
+              <a href="#project-industrial"><span>工业视觉与嵌入式系统项目集</span><small>2021 – 24</small></a>
+            </nav>
+
+            <article class="project-card" id="project-switch-control">
               <div class="project-head">
                 <div class="project-title-row">
                   <h3>机器人开关灯操作与任务联调</h3>
@@ -625,7 +491,7 @@
               </div>
             </article>
 
-            <article class="project-card reveal" id="project-camera-navigation">
+            <article class="project-card" id="project-camera-navigation">
               <div class="project-head">
                 <div class="project-title-row">
                   <h3>相机辅助的机器人视觉导航</h3>
@@ -709,7 +575,7 @@
               </div>
             </article>
 
-            <article class="project-card reveal" id="project-ai-showroom">
+            <article class="project-card" id="project-ai-showroom">
               <div class="project-head">
                 <div class="project-title-row">
                   <h3>GPT-6 Astra 辅助展厅场景建模</h3>
@@ -758,7 +624,7 @@
               </div>
             </article>
 
-            <article class="project-card reveal" id="project-pouring">
+            <article class="project-card" id="project-pouring">
               <div class="project-head">
                 <div class="project-title-row">
                   <h3>透明容器抓取与双臂倒水</h3>
@@ -806,7 +672,7 @@
               </div>
             </article>
 
-            <article class="project-card reveal" id="project-wellplate">
+            <article class="project-card" id="project-wellplate">
               <div class="project-head">
                 <div class="project-title-row">
                   <h3>亚毫米级孔板抓放与灵巧手移液</h3>
@@ -990,7 +856,7 @@
               </div>
             </article>
 
-            <article class="project-card reveal" id="project-datapipeline">
+            <article class="project-card" id="project-datapipeline">
               <div class="project-head">
                 <div class="project-title-row">
                   <h3>多源机器人数据采集与质检管线</h3>
@@ -1050,7 +916,7 @@
               </div>
             </article>
 
-            <article class="project-card reveal" id="project-rl-seg">
+            <article class="project-card" id="project-rl-seg">
               <div class="project-head">
                 <div class="project-title-row">
                   <h3>可提示区域探索的前列腺癌分割</h3>
@@ -1123,7 +989,7 @@
               </div>
             </article>
 
-            <article class="project-card reveal" id="project-isaaclab">
+            <article class="project-card" id="project-isaaclab">
               <div class="project-head">
                 <div class="project-title-row">
                   <h3>NVIDIA IsaacLab 仿真实践</h3>
@@ -1147,7 +1013,7 @@
               </div>
             </article>
 
-            <article class="project-card reveal" id="project-slam">
+            <article class="project-card" id="project-slam">
               <div class="project-head">
                 <div class="project-title-row">
                   <h3>ORB-SLAM2 性能评估与实景测试</h3>
@@ -1174,7 +1040,7 @@
               </div>
             </article>
 
-            <article class="project-card reveal" id="project-ros-grasp">
+            <article class="project-card" id="project-ros-grasp">
               <div class="project-head">
                 <div class="project-title-row">
                   <h3>基于 ROS 的物体检测与抓取放置系统</h3>
@@ -1198,7 +1064,7 @@
               </div>
             </article>
 
-            <article class="project-card reveal" id="project-binpacking">
+            <article class="project-card" id="project-binpacking">
               <div class="project-head">
                 <div class="project-title-row">
                   <h3>基于 DRL 与 3D 视觉的机器人在线箱体打包</h3>
@@ -1221,7 +1087,7 @@
               </div>
             </article>
 
-            <article class="project-card reveal" id="project-medical">
+            <article class="project-card" id="project-medical">
               <div class="project-head">
                 <div class="project-title-row">
                   <h3>医学影像与信号处理项目集</h3>
@@ -1260,7 +1126,7 @@
               </div>
             </article>
 
-            <article class="project-card reveal" id="project-industrial">
+            <article class="project-card" id="project-industrial">
               <div class="project-head">
                 <div class="project-title-row">
                   <h3>工业视觉与嵌入式系统项目集</h3>
@@ -1312,9 +1178,8 @@
           </section>
 
           <!-- ============ PUBLICATIONS ============ -->
-          <section class="section reveal" data-section id="publications">
+          <section class="section wrap" data-section id="publications">
             <div class="section-heading">
-              <p class="eyebrow">Publications</p>
               <h2>学术论文</h2>
               <p>6 篇已发表论文，其中 4 篇第一作者。</p>
             </div>
@@ -1426,8 +1291,7 @@
               </li>
             </ol>
 
-            <div class="section-heading" style="margin-top: 2.4rem">
-              <p class="eyebrow">Talk</p>
+            <div class="section-heading">
               <h2>学术会议演讲</h2>
             </div>
 
@@ -1449,8 +1313,7 @@
               </div>
             </article>
 
-            <div class="section-heading" style="margin-top: 2.4rem">
-              <p class="eyebrow">Awards</p>
+            <div class="section-heading">
               <h2>荣誉与奖项</h2>
             </div>
 
@@ -1489,9 +1352,8 @@
           </section>
 
           <!-- ============ STACK ============ -->
-          <section class="section reveal" data-section id="stack">
+          <section class="section wrap" data-section id="stack">
             <div class="section-heading">
-              <p class="eyebrow">Stack</p>
               <h2>技术栈</h2>
               <p>机器人学习与真机部署中实际使用的方法、工具与工程实践。</p>
             </div>
@@ -1570,14 +1432,21 @@
               </article>
             </div>
           </section>
-        </div>
       </main>
 
       <footer class="site-footer">
-        <p>杨骏青 Junqing Yang · Robotics &amp; Embodied AI · Personal Portfolio</p>
+        <div class="wrap">
+          <p class="footer-motto">“NEVER KNOWS BEST”</p>
+          <p class="footer-contact">
+            <a href="mailto:yjunqing12@163.com">yjunqing12@163.com</a>
+            <a href="https://github.com/JQ-Sakura" rel="me">GitHub</a>
+            <a href="https://www.linkedin.com/in/junqing-yang-381b73245">LinkedIn</a>
+          </p>
+          <p class="footer-note">杨骏青 Junqing Yang，上海</p>
+        </div>
       </footer>
     </div>
 
-    <script src="script.js?v=20261022-a"></script>
+    <script src="script.js?v=20261118-bench"></script>
   </body>
 </html>

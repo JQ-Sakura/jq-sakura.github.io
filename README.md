@@ -17,8 +17,8 @@ python3 -m http.server 8000
 
 ```
 index.html          页面内容
-styles.css          样式（暗色主题，CSS 变量定义在 :root）
-script.js           滚动淡入、导航高亮、锚点偏移
+styles.css          样式（浅色主题，CSS 变量定义在 :root）
+script.js           导航高亮、锚点偏移、首屏视频自动播放、视频轮播
 assets/images/      图片
 assets/videos/      视频
 ```

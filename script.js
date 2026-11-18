@@ -5,25 +5,6 @@
   // The navigation wraps on mobile, so anchor targets must clear its actual height.
   const headerOffset = () => Math.ceil(siteHeader.getBoundingClientRect().height) + 8;
 
-  // ============ reveal on scroll ============
-  // threshold must stay 0: several .reveal elements (the sticky sidebar, long
-  // sections) are far taller than the viewport and can never cross a ratio
-  // above ~0.08, so any non-zero threshold leaves them stuck at opacity 0.
-  const revealTargets = document.querySelectorAll('.reveal');
-
-  const revealObserver = new IntersectionObserver(
-    (entries, observer) => {
-      entries.forEach((entry) => {
-        if (!entry.isIntersecting) return;
-        entry.target.classList.add('is-visible');
-        observer.unobserve(entry.target);
-      });
-    },
-    { threshold: 0, rootMargin: '0px 0px -8% 0px' }
-  );
-
-  revealTargets.forEach((el) => revealObserver.observe(el));
-
   // ============ nav active state ============
   const sections = [...document.querySelectorAll('[data-section]')];
   const navLinks = [...document.querySelectorAll('[data-nav-link]')];
@@ -91,6 +72,64 @@
   if (location.hash.length > 1) {
     requestAnimationFrame(() => scrollToId(location.hash.slice(1)));
   }
+
+  // ============ bench clips ============
+  // The three clips under the headline numbers play on their own while visible.
+  // Each gets a pause button, and nothing autoplays under reduced motion.
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  document.querySelectorAll('video[data-autoplay]').forEach((video) => {
+    const toggle = video.parentElement.querySelector('.bench-toggle');
+    let userPaused = reduceMotion;
+
+    const load = () => {
+      if (video.dataset.loaded) return;
+      video.querySelectorAll('source[data-src]').forEach((s) => {
+        s.src = s.dataset.src;
+        s.removeAttribute('data-src');
+      });
+      video.load();
+      video.dataset.loaded = '1';
+    };
+
+    const sync = () => {
+      if (!toggle) return;
+      toggle.classList.toggle('is-paused', video.paused);
+      toggle.setAttribute('aria-label', video.paused ? '播放视频' : '暂停视频');
+    };
+
+    video.addEventListener('play', sync);
+    video.addEventListener('pause', sync);
+
+    if (toggle) {
+      toggle.hidden = false;
+      toggle.addEventListener('click', () => {
+        if (video.paused) {
+          userPaused = false;
+          load();
+          video.play().catch(() => {});
+        } else {
+          userPaused = true;
+          video.pause();
+        }
+      });
+    }
+    sync();
+
+    new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting && !userPaused) {
+            load();
+            video.play().catch(() => {});
+          } else if (!entry.isIntersecting && !video.paused) {
+            video.pause();
+          }
+        });
+      },
+      { threshold: 0.25 }
+    ).observe(video);
+  });
 
   // ============ video carousels ============
   // Each carousel keeps every clip in the DOM but only ever gives the active one
